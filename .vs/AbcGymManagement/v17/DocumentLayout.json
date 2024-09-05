@@ -1,0 +1,225 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|c:\\users\\abdur rehman\\source\\repos\\abcgymmanagement\\abcgymmanagement\\apirequesthandler\\httproomrequesthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|solutionrelative:abcgymmanagement\\apirequesthandler\\httproomrequesthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|c:\\users\\abdur rehman\\source\\repos\\abcgymmanagement\\abcgymmanagement\\dtos\\trainers\\trainerresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|solutionrelative:abcgymmanagement\\dtos\\trainers\\trainerresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|c:\\users\\abdur rehman\\source\\repos\\abcgymmanagement\\abcgymmanagement\\apirequesthandler\\httptrainerhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|solutionrelative:abcgymmanagement\\apirequesthandler\\httptrainerhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|c:\\users\\abdur rehman\\source\\repos\\abcgymmanagement\\abcgymmanagement\\forms\\adminforms\\trainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|solutionrelative:abcgymmanagement\\forms\\adminforms\\trainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\abcgymmanagement\\forms\\adminforms\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|solutionrelative:abcgymmanagement\\forms\\adminforms\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|c:\\users\\abdur rehman\\source\\repos\\abcgymmanagement\\abcgymmanagement\\forms\\adminforms\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|solutionrelative:abcgymmanagement\\forms\\adminforms\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\abcgymmanagement\\forms\\adminforms\\hall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|solutionrelative:abcgymmanagement\\forms\\adminforms\\hall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|c:\\users\\abdur rehman\\source\\repos\\abcgymmanagement\\abcgymmanagement\\dtos\\trainers\\trainercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|solutionrelative:abcgymmanagement\\dtos\\trainers\\trainercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\abcgymmanagement\\forms\\adminforms\\trainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|solutionrelative:abcgymmanagement\\forms\\adminforms\\trainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|c:\\users\\abdur rehman\\source\\repos\\abcgymmanagement\\abcgymmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|solutionrelative:abcgymmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|c:\\users\\abdur rehman\\source\\repos\\abcgymmanagement\\abcgymmanagement\\forms\\adminforms\\hall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91E66F54-03E1-4C8F-BF7E-0C3B925350DA}|AbcGymManagement\\AbcGymManagement.csproj|solutionrelative:abcgymmanagement\\forms\\adminforms\\hall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 13,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Hall.cs",
+              "DocumentMoniker": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Forms\\AdminForms\\Hall.cs",
+              "RelativeDocumentMoniker": "AbcGymManagement\\Forms\\AdminForms\\Hall.cs",
+              "ToolTip": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Forms\\AdminForms\\Hall.cs",
+              "RelativeToolTip": "AbcGymManagement\\Forms\\AdminForms\\Hall.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAuwEgAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T12:31:06.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RoomType.cs",
+              "DocumentMoniker": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Forms\\AdminForms\\RoomType.cs",
+              "RelativeDocumentMoniker": "AbcGymManagement\\Forms\\AdminForms\\RoomType.cs",
+              "ToolTip": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Forms\\AdminForms\\RoomType.cs",
+              "RelativeToolTip": "AbcGymManagement\\Forms\\AdminForms\\RoomType.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAEwB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T12:21:09.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TrainerResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Dtos\\Trainers\\TrainerResponseDto.cs",
+              "RelativeDocumentMoniker": "AbcGymManagement\\Dtos\\Trainers\\TrainerResponseDto.cs",
+              "ToolTip": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Dtos\\Trainers\\TrainerResponseDto.cs",
+              "RelativeToolTip": "AbcGymManagement\\Dtos\\Trainers\\TrainerResponseDto.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAgwBkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T12:20:05.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TrainerCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Dtos\\Trainers\\TrainerCreateDto.cs",
+              "RelativeDocumentMoniker": "AbcGymManagement\\Dtos\\Trainers\\TrainerCreateDto.cs",
+              "ToolTip": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Dtos\\Trainers\\TrainerCreateDto.cs",
+              "RelativeToolTip": "AbcGymManagement\\Dtos\\Trainers\\TrainerCreateDto.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAmwB0AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T12:20:00.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HttpTrainerHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\ApiRequestHandler\\HttpTrainerHandler.cs",
+              "RelativeDocumentMoniker": "AbcGymManagement\\ApiRequestHandler\\HttpTrainerHandler.cs",
+              "ToolTip": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\ApiRequestHandler\\HttpTrainerHandler.cs",
+              "RelativeToolTip": "AbcGymManagement\\ApiRequestHandler\\HttpTrainerHandler.cs",
+              "ViewState": "AQIAAFoAAACAZmZmZmYkwGMAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T08:24:32.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Program.cs",
+              "RelativeDocumentMoniker": "AbcGymManagement\\Program.cs",
+              "ToolTip": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Program.cs",
+              "RelativeToolTip": "AbcGymManagement\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T10:25:55.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HttpRoomRequestHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\ApiRequestHandler\\HttpRoomRequestHandler.cs",
+              "RelativeDocumentMoniker": "AbcGymManagement\\ApiRequestHandler\\HttpRoomRequestHandler.cs",
+              "ToolTip": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\ApiRequestHandler\\HttpRoomRequestHandler.cs",
+              "RelativeToolTip": "AbcGymManagement\\ApiRequestHandler\\HttpRoomRequestHandler.cs",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAuwJQAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T08:24:55.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Trainer.cs",
+              "DocumentMoniker": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Forms\\AdminForms\\Trainer.cs",
+              "RelativeDocumentMoniker": "AbcGymManagement\\Forms\\AdminForms\\Trainer.cs",
+              "ToolTip": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Forms\\AdminForms\\Trainer.cs",
+              "RelativeToolTip": "AbcGymManagement\\Forms\\AdminForms\\Trainer.cs",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAewHUAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T08:23:37.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Hall.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Forms\\AdminForms\\Hall.cs",
+              "RelativeDocumentMoniker": "AbcGymManagement\\Forms\\AdminForms\\Hall.cs",
+              "ToolTip": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Forms\\AdminForms\\Hall.cs [Design]",
+              "RelativeToolTip": "AbcGymManagement\\Forms\\AdminForms\\Hall.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T12:31:04.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RoomType.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Forms\\AdminForms\\RoomType.cs",
+              "RelativeDocumentMoniker": "AbcGymManagement\\Forms\\AdminForms\\RoomType.cs",
+              "ToolTip": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Forms\\AdminForms\\RoomType.cs [Design]",
+              "RelativeToolTip": "AbcGymManagement\\Forms\\AdminForms\\RoomType.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T12:21:06.701Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Trainer.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Forms\\AdminForms\\Trainer.cs",
+              "RelativeDocumentMoniker": "AbcGymManagement\\Forms\\AdminForms\\Trainer.cs",
+              "ToolTip": "C:\\Users\\Abdur Rehman\\Source\\Repos\\AbcGymManagement\\AbcGymManagement\\Forms\\AdminForms\\Trainer.cs [Design]",
+              "RelativeToolTip": "AbcGymManagement\\Forms\\AdminForms\\Trainer.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T12:18:51.259Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

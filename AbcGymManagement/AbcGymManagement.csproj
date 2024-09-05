@@ -23,4 +23,13 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Forms\UserForms\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="KafkaFlow.Serializer.NewtonsoftJson" Version="3.0.10" />
+    <PackageReference Include="RestSharp" Version="111.4.1" />
+  </ItemGroup>
+
 </Project>
