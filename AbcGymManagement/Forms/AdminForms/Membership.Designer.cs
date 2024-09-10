@@ -49,8 +49,8 @@
             lblMemberName = new Label();
             lblMemberNamr = new Label();
             panel1 = new Panel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox9 = new PictureBox();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)DGVMeasurement).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
@@ -60,11 +60,11 @@
             // 
             DGVMeasurement.BackgroundColor = SystemColors.ButtonHighlight;
             DGVMeasurement.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVMeasurement.Location = new Point(235, 478);
+            DGVMeasurement.Location = new Point(291, 478);
             DGVMeasurement.Name = "DGVMeasurement";
             DGVMeasurement.RowHeadersWidth = 62;
             DGVMeasurement.RowTemplate.Height = 33;
-            DGVMeasurement.Size = new Size(1477, 231);
+            DGVMeasurement.Size = new Size(1421, 231);
             DGVMeasurement.TabIndex = 30;
             // 
             // btnSave
@@ -250,14 +250,6 @@
             panel1.Size = new Size(59, 121);
             panel1.TabIndex = 83;
             // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.BackColor = Color.FromArgb(64, 64, 64);
-            flowLayoutPanel1.Location = new Point(291, 59);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(412, 89);
-            flowLayoutPanel1.TabIndex = 82;
-            // 
             // pictureBox9
             // 
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
@@ -267,6 +259,14 @@
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox9.TabIndex = 84;
             pictureBox9.TabStop = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.FromArgb(64, 64, 64);
+            flowLayoutPanel1.Location = new Point(291, 59);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(412, 89);
+            flowLayoutPanel1.TabIndex = 82;
             // 
             // Membership
             // 

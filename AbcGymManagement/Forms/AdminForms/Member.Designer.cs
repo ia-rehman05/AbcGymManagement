@@ -1,6 +1,6 @@
 ﻿namespace AbcGymManagement.Forms
 {
-    partial class AddMember
+    partial class Member
     {
         /// <summary>
         /// Required designer variable.
@@ -43,9 +43,8 @@
             txtEmail = new TextBox();
             lblPassword = new Label();
             txtPassword = new TextBox();
-            dataGridView1 = new DataGridView();
+            DGVMember = new DataGridView();
             btnSave = new Button();
-            btnBack = new Button();
             label1 = new Label();
             cmbTrainer = new ComboBox();
             lblTrainerName = new Label();
@@ -60,7 +59,9 @@
             lblMembershipName = new Label();
             cmbMembershipID = new ComboBox();
             label9 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnEdit = new Button();
+            btnDelete = new Button();
+            ((System.ComponentModel.ISupportInitialize)DGVMember).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -221,39 +222,31 @@
             txtPassword.Text = "Create Strong Password";
             txtPassword.TextAlign = HorizontalAlignment.Center;
             // 
-            // dataGridView1
+            // DGVMember
             // 
-            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(239, 540);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(1476, 170);
-            dataGridView1.TabIndex = 10;
+            DGVMember.BackgroundColor = SystemColors.ButtonHighlight;
+            DGVMember.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVMember.Location = new Point(288, 540);
+            DGVMember.Name = "DGVMember";
+            DGVMember.RowHeadersWidth = 62;
+            DGVMember.RowTemplate.Height = 33;
+            DGVMember.Size = new Size(1427, 170);
+            DGVMember.TabIndex = 10;
+            DGVMember.CellContentClick += DGVMember_CellContentClick;
+            DGVMember.MouseDoubleClick += DGVMember_MouseDoubleClick;
             // 
             // btnSave
             // 
             btnSave.BackColor = Color.FromArgb(64, 64, 64);
             btnSave.Font = new Font("Bell MT", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnSave.ForeColor = SystemColors.ButtonHighlight;
-            btnSave.Location = new Point(1351, 486);
+            btnSave.Location = new Point(1349, 496);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(251, 38);
             btnSave.TabIndex = 11;
             btnSave.Text = "Save and Add Measurements";
             btnSave.UseVisualStyleBackColor = false;
-            // 
-            // btnBack
-            // 
-            btnBack.BackColor = SystemColors.ButtonHighlight;
-            btnBack.Font = new Font("Bell MT", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBack.Location = new Point(1225, 486);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(112, 38);
-            btnBack.TabIndex = 12;
-            btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // label1
             // 
@@ -275,6 +268,7 @@
             cmbTrainer.Size = new Size(203, 34);
             cmbTrainer.TabIndex = 7;
             cmbTrainer.UseWaitCursor = true;
+            cmbTrainer.SelectedIndexChanged += cmbTrainer_SelectedIndexChanged;
             // 
             // lblTrainerName
             // 
@@ -392,11 +386,38 @@
             label9.TabIndex = 24;
             label9.Text = "Assign Membership";
             // 
-            // AddMember
+            // btnEdit
+            // 
+            btnEdit.BackColor = Color.FromArgb(64, 64, 64);
+            btnEdit.Font = new Font("Bell MT", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEdit.ForeColor = Color.White;
+            btnEdit.Location = new Point(1349, 456);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(122, 34);
+            btnEdit.TabIndex = 27;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = false;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.FromArgb(64, 64, 64);
+            btnDelete.Font = new Font("Bell MT", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDelete.ForeColor = SystemColors.ControlLight;
+            btnDelete.Location = new Point(1477, 456);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(124, 34);
+            btnDelete.TabIndex = 28;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // Member
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1713, 710);
+            Controls.Add(btnEdit);
+            Controls.Add(btnDelete);
             Controls.Add(lblMembershipName);
             Controls.Add(cmbMembershipID);
             Controls.Add(label9);
@@ -407,9 +428,8 @@
             Controls.Add(label3);
             Controls.Add(panel1);
             Controls.Add(lblTrainerName);
-            Controls.Add(btnBack);
             Controls.Add(btnSave);
-            Controls.Add(dataGridView1);
+            Controls.Add(DGVMember);
             Controls.Add(txtPassword);
             Controls.Add(txtEmail);
             Controls.Add(txtContactNumber);
@@ -429,10 +449,10 @@
             Controls.Add(lblAddMember);
             Controls.Add(flowLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "AddMember";
+            Name = "Member";
             Text = "AddMember";
             Load += AddMember_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGVMember).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -457,9 +477,8 @@
         private TextBox txtEmail;
         private Label lblPassword;
         private TextBox txtPassword;
-        private DataGridView dataGridView1;
+        private DataGridView DGVMember;
         private Button btnSave;
-        private Button btnBack;
         private Label label1;
         private ComboBox cmbTrainer;
         private Label lblTrainerName;
@@ -474,5 +493,7 @@
         private Label lblMembershipName;
         private ComboBox cmbMembershipID;
         private Label label9;
+        private Button btnEdit;
+        private Button btnDelete;
     }
 }

@@ -9,25 +9,26 @@ namespace GMS.Service.Dtos.InventoryItems
 {
     public class InventoryItemDto
     {
-        [Required]
         public Guid Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "HallId is required.")]
         public Guid HallId { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "ItemName length can't be more than 100.")]
+        [Required(ErrorMessage = "ItemName is required.")]
+        [StringLength(100, ErrorMessage = "ItemName cannot exceed 100 characters.")]
         public string ItemName { get; set; }
 
-        [Required]
-        [Range(0, int.MaxValue, ErrorMessage = "Quantity must be a positive number.")]
+        [Required(ErrorMessage = "Quantity is required.")]
         public int Quantity { get; set; }
 
-        [StringLength(500, ErrorMessage = "MaintenanceSchedule length can't be more than 500.")]
-        public string MaintenanceSchedule { get; set; }
+        [Required(ErrorMessage = "Maintenance Schedule is required.")]
+        [StringLength(50, ErrorMessage = "Maintenance Schedule cannot exceed 50 characters.")]
+        public string MaintainanceSchedule { get; set; }
 
-        [Required]
-        [DataType(DataType.Date)]
+        [Required(ErrorMessage = "Last Maintenance Date is required.")]
         public DateTime LastMaintenanceDate { get; set; }
+
+        [Required(ErrorMessage = "Next Maintenance Date is required.")]
+        public DateTime NextMaintenanceDate { get; set; }
     }
 }

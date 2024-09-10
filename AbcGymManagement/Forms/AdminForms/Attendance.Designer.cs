@@ -46,8 +46,8 @@
             btnEdit = new Button();
             btnDelete = new Button();
             panel1 = new Panel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox6 = new PictureBox();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -115,9 +115,9 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(519, 245);
+            dateTimePicker1.Location = new Point(513, 245);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(492, 31);
+            dateTimePicker1.Size = new Size(498, 31);
             dateTimePicker1.TabIndex = 41;
             // 
             // DtpCheckin
@@ -222,14 +222,6 @@
             panel1.Size = new Size(59, 121);
             panel1.TabIndex = 49;
             // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.BackColor = Color.FromArgb(64, 64, 64);
-            flowLayoutPanel1.Location = new Point(291, 59);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(412, 89);
-            flowLayoutPanel1.TabIndex = 48;
-            // 
             // pictureBox6
             // 
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
@@ -239,6 +231,14 @@
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 7;
             pictureBox6.TabStop = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.FromArgb(64, 64, 64);
+            flowLayoutPanel1.Location = new Point(291, 59);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(412, 89);
+            flowLayoutPanel1.TabIndex = 48;
             // 
             // Attendance
             // 
@@ -266,6 +266,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Attendance";
             Text = "Attendance";
+            Load += Attendance_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();

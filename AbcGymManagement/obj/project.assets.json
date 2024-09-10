@@ -49,7 +49,7 @@
           }
         }
       },
-      "RestSharp/111.4.1": {
+      "RestSharp/112.0.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/RestSharp.dll": {
@@ -136,10 +136,10 @@
         "packageIcon.png"
       ]
     },
-    "RestSharp/111.4.1": {
-      "sha512": "MhrBdwqYd+ezd3xD+c6eaAVcLJoWI+2TBH7rqX149nbYRkPJJfK/UbrgJVfKN9ZMehOFzo2PmKIZjS1ATnxEAQ==",
+    "RestSharp/112.0.0": {
+      "sha512": "vezxJ6DLk0eDx+rmXwVHQvJ3elZCJfnLd8neRrkA+IvTs9falf2CEAolsjI1YKkkHTOvG13xWTnHK7gU0zgaaw==",
       "type": "package",
-      "path": "restsharp/111.4.1",
+      "path": "restsharp/112.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -156,7 +156,7 @@
         "lib/net8.0/RestSharp.xml",
         "lib/netstandard2.0/RestSharp.dll",
         "lib/netstandard2.0/RestSharp.xml",
-        "restsharp.111.4.1.nupkg.sha512",
+        "restsharp.112.0.0.nupkg.sha512",
         "restsharp.nuspec",
         "restsharp.png"
       ]
@@ -225,7 +225,7 @@
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "KafkaFlow.Serializer.NewtonsoftJson >= 3.0.10",
-      "RestSharp >= 111.4.1"
+      "RestSharp >= 112.0.0"
     ]
   },
   "packageFolders": {
@@ -279,7 +279,7 @@
           },
           "RestSharp": {
             "target": "Package",
-            "version": "[111.4.1, )"
+            "version": "[112.0.0, )"
           }
         },
         "imports": [

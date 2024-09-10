@@ -9,12 +9,10 @@ namespace GMS.Service.Dtos.Memberships
     public class MembershipDto
     {
         public Guid Id { get; set; }
-        public int MemberId { get; set; }
-        public string SchemeName { get; set; }
-        public decimal Amount { get; set; }
-        public string Duration { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+
+        public string MemberId { get; set; }
+        public Guid PackageId { get; set; }
+        public bool IsActive { get; set; }
 
     }
 }

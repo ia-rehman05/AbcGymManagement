@@ -14,7 +14,6 @@ C:\Users\Abdur Rehman\Source\Repos\AbcGymManagement\AbcGymManagement\obj\Debug\n
 C:\Users\Abdur Rehman\Source\Repos\AbcGymManagement\AbcGymManagement\obj\Debug\net6.0-windows\AbcGymManagement.pdb
 C:\Users\Abdur Rehman\Source\Repos\AbcGymManagement\AbcGymManagement\obj\Debug\net6.0-windows\AbcGymManagement.genruntimeconfig.cache
 C:\Users\Abdur Rehman\Source\Repos\AbcGymManagement\AbcGymManagement\obj\Debug\net6.0-windows\ref\AbcGymManagement.dll
-C:\Users\Abdur Rehman\Source\Repos\AbcGymManagement\AbcGymManagement\obj\Debug\net6.0-windows\AbcGymManagement.Forms.AddMember.resources
 C:\Users\Abdur Rehman\Source\Repos\AbcGymManagement\AbcGymManagement\obj\Debug\net6.0-windows\AbcGymManagement.Forms.Measurement.resources
 C:\Users\Abdur Rehman\Source\Repos\AbcGymManagement\AbcGymManagement\obj\Debug\net6.0-windows\AbcGymManagement.Dashboard.resources
 C:\Users\Abdur Rehman\Source\Repos\AbcGymManagement\AbcGymManagement\obj\Debug\net6.0-windows\AbcGymManagement.Forms.Membership.resources
@@ -35,3 +34,5 @@ C:\Users\Abdur Rehman\Source\Repos\AbcGymManagement\AbcGymManagement\bin\Debug\n
 C:\Users\Abdur Rehman\Source\Repos\AbcGymManagement\AbcGymManagement\bin\Debug\net6.0-windows\KafkaFlow.Serializer.NewtonsoftJson.dll
 C:\Users\Abdur Rehman\Source\Repos\AbcGymManagement\AbcGymManagement\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 C:\Users\Abdur Rehman\Source\Repos\AbcGymManagement\AbcGymManagement\obj\Debug\net6.0-windows\AbcGymManagement.Forms.AdminForms.RoomType.resources
+C:\Users\Abdur Rehman\Source\Repos\AbcGymManagement\AbcGymManagement\obj\Debug\net6.0-windows\AbcGymManagement.Forms.Member.resources
+C:\Users\Abdur Rehman\Source\Repos\AbcGymManagement\AbcGymManagement\obj\Debug\net6.0-windows\AbcGymManagement.Forms.AdminForms.Package.resources

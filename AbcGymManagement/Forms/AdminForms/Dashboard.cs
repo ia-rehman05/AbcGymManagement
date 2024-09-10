@@ -27,7 +27,7 @@ namespace AbcGymManagement
         }
         private void BtnAddMember_Click(object sender, EventArgs e)
         {
-            loadform(new AddMember());
+            loadform(new Member());
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -207,7 +207,7 @@ namespace AbcGymManagement
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            loadform(new AddMember());
+            loadform(new Member());
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)

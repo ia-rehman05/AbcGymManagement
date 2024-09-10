@@ -130,6 +130,7 @@
             btnDelete.TabIndex = 15;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
@@ -420,12 +421,14 @@
             DGVTrainer.AllowUserToDeleteRows = false;
             DGVTrainer.BackgroundColor = SystemColors.ButtonHighlight;
             DGVTrainer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVTrainer.Location = new Point(235, 579);
+            DGVTrainer.Location = new Point(291, 579);
             DGVTrainer.Name = "DGVTrainer";
             DGVTrainer.RowHeadersWidth = 62;
             DGVTrainer.RowTemplate.Height = 33;
-            DGVTrainer.Size = new Size(1477, 162);
+            DGVTrainer.Size = new Size(1421, 162);
             DGVTrainer.TabIndex = 113;
+            DGVTrainer.CellContentClick += DGVTrainer_CellContentClick;
+            DGVTrainer.MouseDoubleClick += DGVTrainer_MouseDoubleClick;
             // 
             // Trainer
             // 

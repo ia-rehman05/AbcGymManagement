@@ -82,7 +82,7 @@ namespace AbcGymManagement.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Failed to load RoomTypes.");
+                    MessageBox.Show("Failed to Hall.");
                 }
             }
             catch (Exception ex)
@@ -129,7 +129,7 @@ namespace AbcGymManagement.Forms
 
                 if (isSuccess)
                 {
-                    MessageBox.Show("RoomType deleted successfully!");
+                    MessageBox.Show("Hall deleted successfully!");
                     Loadhall();
                     ClearForm();
 
@@ -148,7 +148,6 @@ namespace AbcGymManagement.Forms
 
         private async void btnEdit_Click(object sender, EventArgs e)
         {
-
 
             if (_selectedHallId.HasValue)
             {
@@ -181,38 +180,6 @@ namespace AbcGymManagement.Forms
             {
                 MessageBox.Show("Please select a Hall to update.");
             }
-
-            //if (_selectedHallId.HasValue)
-            //{
-            //    var updatedHall = new HallDto
-            //    {
-            //        Id = _selectedHallId.Value,
-            //        Name = txtName.Text,
-            //        RoomTypeId = (Guid)cmbRoomType.SelectedValue,
-            //        Capacity = txtCapacity.Text,
-            //        Location = txtLocation.Text,
-            //        AvailabilityStatus = ChkAvailible.Checked
-
-            //    };
-
-            //    string fullUrl = $"{_apiUrl}/{_selectedHallId.Value}";
-            //    //bool isSuccess = await _httpHall.UpdateHallAsync(fullUrl, updatedHall);
-            //    if (isSuccess)
-            //    {
-            //        MessageBox.Show("RoomType updated successfully!");
-            //        //LoadRoomTypes(); // Refresh the grid after updating
-            //        //Clear();
-
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Failed to update RoomType.");
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Please select a RoomType to update.");
-            //}
         }
 
         private void DGVHall_SelectionChanged(object sender, EventArgs e)
