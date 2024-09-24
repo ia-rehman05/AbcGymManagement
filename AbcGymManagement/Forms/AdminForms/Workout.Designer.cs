@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Workout));
-            comboBox2 = new ComboBox();
+            cmbmember = new ComboBox();
             txtExercise = new TextBox();
-            DGVMeasurement = new DataGridView();
+            DgvWorkout = new DataGridView();
             btnSave = new Button();
             btnDelete = new Button();
             btnEdit = new Button();
@@ -46,22 +46,22 @@
             lblSet = new Label();
             lblExercise = new Label();
             panel2 = new Panel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox8 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)DGVMeasurement).BeginInit();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)DgvWorkout).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
-            // comboBox2
+            // cmbmember
             // 
-            comboBox2.Font = new Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(1072, 101);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(356, 34);
-            comboBox2.TabIndex = 54;
-            comboBox2.Text = "                           Select Member ID";
+            cmbmember.Font = new Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbmember.FormattingEnabled = true;
+            cmbmember.Location = new Point(1072, 101);
+            cmbmember.Name = "cmbmember";
+            cmbmember.Size = new Size(356, 34);
+            cmbmember.TabIndex = 54;
+            cmbmember.Text = "                           Select Member ID";
             // 
             // txtExercise
             // 
@@ -70,16 +70,16 @@
             txtExercise.Size = new Size(335, 31);
             txtExercise.TabIndex = 49;
             // 
-            // DGVMeasurement
+            // DgvWorkout
             // 
-            DGVMeasurement.BackgroundColor = SystemColors.ButtonHighlight;
-            DGVMeasurement.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVMeasurement.Location = new Point(235, 478);
-            DGVMeasurement.Name = "DGVMeasurement";
-            DGVMeasurement.RowHeadersWidth = 62;
-            DGVMeasurement.RowTemplate.Height = 33;
-            DGVMeasurement.Size = new Size(1477, 231);
-            DGVMeasurement.TabIndex = 48;
+            DgvWorkout.BackgroundColor = SystemColors.ButtonHighlight;
+            DgvWorkout.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvWorkout.Location = new Point(235, 478);
+            DgvWorkout.Name = "DgvWorkout";
+            DgvWorkout.RowHeadersWidth = 62;
+            DgvWorkout.RowTemplate.Height = 33;
+            DgvWorkout.Size = new Size(1477, 231);
+            DgvWorkout.TabIndex = 48;
             // 
             // btnSave
             // 
@@ -221,14 +221,6 @@
             panel2.Size = new Size(59, 121);
             panel2.TabIndex = 92;
             // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.BackColor = Color.FromArgb(64, 64, 64);
-            flowLayoutPanel1.Location = new Point(291, 59);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(412, 89);
-            flowLayoutPanel1.TabIndex = 91;
-            // 
             // pictureBox8
             // 
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
@@ -238,6 +230,14 @@
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox8.TabIndex = 93;
             pictureBox8.TabStop = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.FromArgb(64, 64, 64);
+            flowLayoutPanel1.Location = new Point(291, 59);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(412, 89);
+            flowLayoutPanel1.TabIndex = 91;
             // 
             // Workout
             // 
@@ -251,9 +251,9 @@
             Controls.Add(labelMemberName);
             Controls.Add(txtReps);
             Controls.Add(txtSets);
-            Controls.Add(comboBox2);
+            Controls.Add(cmbmember);
             Controls.Add(txtExercise);
-            Controls.Add(DGVMeasurement);
+            Controls.Add(DgvWorkout);
             Controls.Add(btnSave);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
@@ -265,7 +265,8 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Workout";
             Text = "Workout";
-            ((System.ComponentModel.ISupportInitialize)DGVMeasurement).EndInit();
+            Load += Workout_Load;
+            ((System.ComponentModel.ISupportInitialize)DgvWorkout).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
@@ -276,13 +277,13 @@
 
         private Label lblMemberNamr;
         private Label lblMemberName;
-        private ComboBox comboBox2;
+        private ComboBox cmbmember;
         private ComboBox cmbScheme;
         private DateTimePicker DTPEnd;
         private DateTimePicker DTPStart;
         private TextBox txtDuration;
         private TextBox txtExercise;
-        private DataGridView DGVMeasurement;
+        private DataGridView DgvWorkout;
         private Button btnSave;
         private Button btnDelete;
         private Button btnEdit;

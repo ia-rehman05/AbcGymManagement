@@ -540,7 +540,7 @@
             // cmbPaymentStatus
             // 
             cmbPaymentStatus.FormattingEnabled = true;
-            cmbPaymentStatus.Items.AddRange(new object[] { "Card", "Cash" });
+            cmbPaymentStatus.Items.AddRange(new object[] { "Paid ", "Partial", "Decline" });
             cmbPaymentStatus.Location = new Point(1237, 416);
             cmbPaymentStatus.Name = "cmbPaymentStatus";
             cmbPaymentStatus.Size = new Size(289, 33);

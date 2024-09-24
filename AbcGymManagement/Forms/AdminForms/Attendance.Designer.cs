@@ -35,20 +35,20 @@
             lblMemberName = new Label();
             cmbMember = new ComboBox();
             lblMembers = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            DtpDate = new DateTimePicker();
             DtpCheckin = new DateTimePicker();
             dtpCheckout = new DateTimePicker();
             lbltime = new Label();
             label1 = new Label();
             label2 = new Label();
-            dataGridView1 = new DataGridView();
+            DGVAttendance = new DataGridView();
             btnAddAttendace = new Button();
             btnEdit = new Button();
             btnDelete = new Button();
             panel1 = new Panel();
             pictureBox6 = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGVAttendance).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
@@ -100,7 +100,7 @@
             cmbMember.Location = new Point(1182, 92);
             cmbMember.Name = "cmbMember";
             cmbMember.Size = new Size(356, 34);
-            cmbMember.TabIndex = 38;
+            cmbMember.TabIndex = 6;
             cmbMember.Text = "                           Select Member ID";
             // 
             // lblMembers
@@ -113,12 +113,12 @@
             lblMembers.TabIndex = 37;
             lblMembers.Text = "Members";
             // 
-            // dateTimePicker1
+            // DtpDate
             // 
-            dateTimePicker1.Location = new Point(513, 245);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(498, 31);
-            dateTimePicker1.TabIndex = 41;
+            DtpDate.Location = new Point(513, 245);
+            DtpDate.Name = "DtpDate";
+            DtpDate.Size = new Size(498, 31);
+            DtpDate.TabIndex = 1;
             // 
             // DtpCheckin
             // 
@@ -126,7 +126,7 @@
             DtpCheckin.Location = new Point(513, 328);
             DtpCheckin.Name = "DtpCheckin";
             DtpCheckin.Size = new Size(236, 31);
-            DtpCheckin.TabIndex = 42;
+            DtpCheckin.TabIndex = 2;
             // 
             // dtpCheckout
             // 
@@ -134,7 +134,7 @@
             dtpCheckout.Location = new Point(775, 328);
             dtpCheckout.Name = "dtpCheckout";
             dtpCheckout.Size = new Size(236, 31);
-            dtpCheckout.TabIndex = 42;
+            dtpCheckout.TabIndex = 3;
             // 
             // lbltime
             // 
@@ -166,16 +166,18 @@
             label2.TabIndex = 22;
             label2.Text = "Checkout";
             // 
-            // dataGridView1
+            // DGVAttendance
             // 
-            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(238, 485);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(1475, 225);
-            dataGridView1.TabIndex = 43;
+            DGVAttendance.BackgroundColor = SystemColors.ButtonHighlight;
+            DGVAttendance.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVAttendance.Location = new Point(288, 485);
+            DGVAttendance.Name = "DGVAttendance";
+            DGVAttendance.RowHeadersWidth = 62;
+            DGVAttendance.RowTemplate.Height = 33;
+            DGVAttendance.Size = new Size(1425, 225);
+            DGVAttendance.TabIndex = 43;
+            DGVAttendance.CellContentClick += DGVAttendance_CellContentClick;
+            DGVAttendance.MouseDoubleClick += DGVAttendance_MouseDoubleClick;
             // 
             // btnAddAttendace
             // 
@@ -185,9 +187,10 @@
             btnAddAttendace.Location = new Point(788, 432);
             btnAddAttendace.Name = "btnAddAttendace";
             btnAddAttendace.Size = new Size(230, 34);
-            btnAddAttendace.TabIndex = 44;
+            btnAddAttendace.TabIndex = 4;
             btnAddAttendace.Text = "Add Atendance";
             btnAddAttendace.UseVisualStyleBackColor = false;
+            btnAddAttendace.Click += btnAddAttendace_Click;
             // 
             // btnEdit
             // 
@@ -197,9 +200,10 @@
             btnEdit.Location = new Point(788, 392);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(112, 34);
-            btnEdit.TabIndex = 45;
+            btnEdit.TabIndex = 5;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnDelete
             // 
@@ -209,9 +213,10 @@
             btnDelete.Location = new Point(906, 392);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(112, 34);
-            btnDelete.TabIndex = 46;
+            btnDelete.TabIndex = 6;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // panel1
             // 
@@ -251,10 +256,10 @@
             Controls.Add(btnAddAttendace);
             Controls.Add(btnEdit);
             Controls.Add(btnDelete);
-            Controls.Add(dataGridView1);
+            Controls.Add(DGVAttendance);
             Controls.Add(dtpCheckout);
             Controls.Add(DtpCheckin);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(DtpDate);
             Controls.Add(lblMemberNamr);
             Controls.Add(lblMemberName);
             Controls.Add(cmbMember);
@@ -267,7 +272,7 @@
             Name = "Attendance";
             Text = "Attendance";
             Load += Attendance_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGVAttendance).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
@@ -281,13 +286,13 @@
         private Label lblMemberName;
         private ComboBox cmbMember;
         private Label lblMembers;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker DtpDate;
         private DateTimePicker DtpCheckin;
         private DateTimePicker dtpCheckout;
         private Label lbltime;
         private Label label1;
         private Label label2;
-        private DataGridView dataGridView1;
+        private DataGridView DGVAttendance;
         private Button btnAddAttendace;
         private Button btnEdit;
         private Button btnDelete;

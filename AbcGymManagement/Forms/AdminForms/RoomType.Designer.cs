@@ -164,11 +164,11 @@
             DGVRoomType.AllowUserToDeleteRows = false;
             DGVRoomType.BackgroundColor = SystemColors.ButtonHighlight;
             DGVRoomType.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVRoomType.Location = new Point(236, 453);
+            DGVRoomType.Location = new Point(288, 453);
             DGVRoomType.Name = "DGVRoomType";
             DGVRoomType.RowHeadersWidth = 62;
             DGVRoomType.RowTemplate.Height = 33;
-            DGVRoomType.Size = new Size(1477, 257);
+            DGVRoomType.Size = new Size(1425, 257);
             DGVRoomType.TabIndex = 85;
             DGVRoomType.CellContentClick += DGVRoomType_CellContentClick;
             DGVRoomType.MouseDoubleClick += DGVRoomType_MouseDoubleClick;

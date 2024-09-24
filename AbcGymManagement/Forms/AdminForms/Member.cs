@@ -21,6 +21,8 @@ namespace AbcGymManagement.Forms
 
 
         private string _apiUrl = "https://localhost:7160/api/Member";
+        private string apiUrl = "https://localhost:7160/api/Membership";
+
         private Guid? _selectedMemberId = null;
         public Member()
         {
@@ -36,19 +38,17 @@ namespace AbcGymManagement.Forms
         {
             var trainers = await _trainerHandler.GetAllTrainersAsync("Trainer");
             cmbTrainer.DataSource = trainers;
-            cmbTrainer.DisplayMember = "FirstName";  // Assuming TrainerResponseDto has a Name property
+            cmbTrainer.DisplayMember = "FirstName";
             cmbTrainer.ValueMember = "Id";
         }
 
         private async void LoadMemberships()
         {
-            var memberships = await _membershipHandler.GetAllMembershipsAsync("Membership");
+            var memberships = await _membershipHandler.GetAllMembershipsAsync(apiUrl);
             cmbMembershipID.DataSource = memberships;
+            cmbTrainer.DisplayMember = "PackageId";
+            cmbTrainer.ValueMember = "Id";
         }
-
-
-
-
         private void AddMember_Load(object sender, EventArgs e)
         {
 
@@ -76,13 +76,12 @@ namespace AbcGymManagement.Forms
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            var memberdto = new MemberCreateDto
+            var memberdto = new MemberCreatedDto()
             {
                 Email = txtEmail.Text,
                 Password = txtPassword.Text,
                 FirstName = txtName.Text,
                 LastName = txtLastName.Text,
-                PhoneNumber = txtContactNumber.Text,
                 Age = string.IsNullOrWhiteSpace(txtAge.Text) ? 0 : Convert.ToInt32(txtAge.Text),
                 Gender = cmbGender.SelectedItem?.ToString(),
                 Address = txtAddress.Text,
@@ -107,6 +106,45 @@ namespace AbcGymManagement.Forms
                 LoadMembers();
             }
         }
+        private async void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (_selectedMemberId != null)
+            {
+                var Updatemember = new MemberCreatedDto()
+                {
+                    Email = txtEmail.Text,
+                    Password = txtPassword.Text,
+                    FirstName = txtName.Text,
+                    LastName = txtLastName.Text,
+                    Age = int.TryParse(txtAge.Text, out int age) ? age : 0,
+                    Gender = cmbGender.SelectedItem?.ToString(),
+                    Address = txtAddress.Text,
+                    DateOfBirth = DTPDOB.Value,
+                    IsActive = ChkIsActive.Checked,
+                    TrainerId = cmbTrainer.SelectedValue?.ToString(),
+                    MembershipId = cmbMembershipID.SelectedValue as Guid?
+
+                };
+                string fullUrl = $"{_apiUrl}/{_selectedMemberId.Value}";
+                bool isSuccess = await _memberHandler.UpdateMemberAsync(fullUrl, Updatemember);
+
+                if (isSuccess)
+                {
+                    MessageBox.Show("Member Updated Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update Member");
+                    LoadMembers();
+                }
+            }
+            else
+            {
+                    MessageBox.Show("Please Select Any Member First");
+            }
+
+
+        }
 
 
 
@@ -119,6 +157,8 @@ namespace AbcGymManagement.Forms
                 if (members != null && members.Any())
                 {
                     DGVMember.DataSource = members;
+
+                    
                 }
                 else
                 {
@@ -129,9 +169,6 @@ namespace AbcGymManagement.Forms
             {
                 MessageBox.Show($"Exception: {ex.Message}");
             }
-
-
-
         }
 
         private void DGVMember_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -149,12 +186,11 @@ namespace AbcGymManagement.Forms
                 DTPDOB.Value = Convert.ToDateTime(selectedRow.Cells["DateOfBirth"].Value);
                 txtEmail.Text = selectedRow.Cells["Email"].Value.ToString();
                 txtAddress.Text = selectedRow.Cells["Address"].Value.ToString();
-                //txtPassword.Text = selectedRow.Cells["Password"].
                 ChkIsActive.Checked = Convert.ToBoolean(selectedRow.Cells["IsActive"].Value);
-                //txtContactNumber.Text = selectedRow.Cells["ContactNumber"].Value?.ToString();
 
             }
         }
+
 
         private void DGVMember_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -167,12 +203,11 @@ namespace AbcGymManagement.Forms
             {
                 string fullUrl = $"{_apiUrl}/{_selectedMemberId.Value}";
 
-                bool isSuccess = await _memberHandler.DeleteTrainerAsync(fullUrl);
-                //bool isSuccess = await _trainer.DeleteTrainerAsync(fullUrl);
+                bool isSuccess = await _memberHandler.DeleteMemberAsync(fullUrl);
 
                 if (isSuccess)
                 {
-                    MessageBox.Show("Trainer deleted successfully!");
+                    MessageBox.Show("Member deleted successfully!");
                     LoadMembers();
                 }
 
@@ -192,5 +227,6 @@ namespace AbcGymManagement.Forms
         {
 
         }
+
     }
 }

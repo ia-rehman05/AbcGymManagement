@@ -31,11 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Diet));
             lblMembership = new Label();
             lblName = new Label();
-            comboBox1 = new ComboBox();
+            cmbMeatype = new ComboBox();
             label1 = new Label();
-            lstFoodItem = new ListBox();
             lblCalories = new Label();
-            textBox1 = new TextBox();
+            txtCalories = new TextBox();
             btnDelete = new Button();
             btnEdit = new Button();
             btnSave = new Button();
@@ -44,8 +43,9 @@
             cmbMembers = new ComboBox();
             lblMembers = new Label();
             panel1 = new Panel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox7 = new PictureBox();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            txtFoodItem = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
@@ -72,13 +72,13 @@
             lblName.TabIndex = 21;
             lblName.Text = "Meal Type";
             // 
-            // comboBox1
+            // cmbMeatype
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(474, 241);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(381, 33);
-            comboBox1.TabIndex = 22;
+            cmbMeatype.FormattingEnabled = true;
+            cmbMeatype.Location = new Point(474, 241);
+            cmbMeatype.Name = "cmbMeatype";
+            cmbMeatype.Size = new Size(381, 33);
+            cmbMeatype.TabIndex = 22;
             // 
             // label1
             // 
@@ -90,16 +90,6 @@
             label1.TabIndex = 23;
             label1.Text = "Food Items";
             // 
-            // lstFoodItem
-            // 
-            lstFoodItem.FormattingEnabled = true;
-            lstFoodItem.ItemHeight = 25;
-            lstFoodItem.Location = new Point(474, 306);
-            lstFoodItem.Name = "lstFoodItem";
-            lstFoodItem.SelectionMode = SelectionMode.MultiExtended;
-            lstFoodItem.Size = new Size(381, 129);
-            lstFoodItem.TabIndex = 24;
-            // 
             // lblCalories
             // 
             lblCalories.AutoSize = true;
@@ -110,12 +100,12 @@
             lblCalories.TabIndex = 25;
             lblCalories.Text = "Calories";
             // 
-            // textBox1
+            // txtCalories
             // 
-            textBox1.Location = new Point(1110, 244);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(335, 31);
-            textBox1.TabIndex = 26;
+            txtCalories.Location = new Point(1110, 244);
+            txtCalories.Name = "txtCalories";
+            txtCalories.Size = new Size(335, 31);
+            txtCalories.TabIndex = 26;
             // 
             // btnDelete
             // 
@@ -200,14 +190,6 @@
             panel1.Size = new Size(59, 121);
             panel1.TabIndex = 52;
             // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.BackColor = Color.FromArgb(64, 64, 64);
-            flowLayoutPanel1.Location = new Point(291, 59);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(412, 89);
-            flowLayoutPanel1.TabIndex = 51;
-            // 
             // pictureBox7
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
@@ -218,12 +200,28 @@
             pictureBox7.TabIndex = 53;
             pictureBox7.TabStop = false;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.FromArgb(64, 64, 64);
+            flowLayoutPanel1.Location = new Point(291, 59);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(412, 89);
+            flowLayoutPanel1.TabIndex = 51;
+            // 
+            // txtFoodItem
+            // 
+            txtFoodItem.Location = new Point(474, 306);
+            txtFoodItem.Name = "txtFoodItem";
+            txtFoodItem.Size = new Size(381, 31);
+            txtFoodItem.TabIndex = 53;
+            // 
             // Diet
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             ClientSize = new Size(1713, 710);
+            Controls.Add(txtFoodItem);
             Controls.Add(panel1);
             Controls.Add(lblMemberNamr);
             Controls.Add(lblMemberName);
@@ -232,17 +230,17 @@
             Controls.Add(btnSave);
             Controls.Add(btnEdit);
             Controls.Add(btnDelete);
-            Controls.Add(textBox1);
+            Controls.Add(txtCalories);
             Controls.Add(lblCalories);
-            Controls.Add(lstFoodItem);
             Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbMeatype);
             Controls.Add(lblName);
             Controls.Add(lblMembership);
             Controls.Add(flowLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Diet";
             Text = "Diet";
+            Load += Diet_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
@@ -252,11 +250,10 @@
         #endregion
         private Label lblMembership;
         private Label lblName;
-        private ComboBox comboBox1;
+        private ComboBox cmbMeatype;
         private Label label1;
-        private ListBox lstFoodItem;
         private Label lblCalories;
-        private TextBox textBox1;
+        private TextBox txtCalories;
         private Button btnDelete;
         private Button btnEdit;
         private Button btnSave;
@@ -267,5 +264,6 @@
         private Panel panel1;
         private FlowLayoutPanel flowLayoutPanel1;
         private PictureBox pictureBox7;
+        private TextBox txtFoodItem;
     }
 }

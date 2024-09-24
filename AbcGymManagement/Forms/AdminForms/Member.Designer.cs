@@ -32,14 +32,12 @@
             lblName = new Label();
             lblAge = new Label();
             lblGender = new Label();
-            label4 = new Label();
             label5 = new Label();
             label6 = new Label();
             txtName = new TextBox();
             txtAge = new TextBox();
             txtAddress = new TextBox();
             cmbGender = new ComboBox();
-            txtContactNumber = new TextBox();
             txtEmail = new TextBox();
             lblPassword = new Label();
             txtPassword = new TextBox();
@@ -108,16 +106,6 @@
             lblGender.TabIndex = 4;
             lblGender.Text = "Gender";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Merriweather", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(1017, 193);
-            label4.Name = "label4";
-            label4.Size = new Size(155, 24);
-            label4.TabIndex = 4;
-            label4.Text = "Contact Number";
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -146,7 +134,6 @@
             txtName.Name = "txtName";
             txtName.Size = new Size(377, 30);
             txtName.TabIndex = 6;
-            txtName.Text = "Enter First Name";
             txtName.TextAlign = HorizontalAlignment.Center;
             // 
             // txtAge
@@ -156,7 +143,6 @@
             txtAge.Name = "txtAge";
             txtAge.Size = new Size(377, 30);
             txtAge.TabIndex = 6;
-            txtAge.Text = "Enter Age";
             txtAge.TextAlign = HorizontalAlignment.Center;
             // 
             // txtAddress
@@ -167,7 +153,6 @@
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(377, 86);
             txtAddress.TabIndex = 6;
-            txtAddress.Text = "Enter Current Address";
             txtAddress.TextAlign = HorizontalAlignment.Center;
             // 
             // cmbGender
@@ -179,18 +164,7 @@
             cmbGender.Name = "cmbGender";
             cmbGender.Size = new Size(376, 34);
             cmbGender.TabIndex = 7;
-            cmbGender.Text = "                              Select Your Gender";
             cmbGender.UseWaitCursor = true;
-            // 
-            // txtContactNumber
-            // 
-            txtContactNumber.Font = new Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtContactNumber.Location = new Point(1224, 187);
-            txtContactNumber.Name = "txtContactNumber";
-            txtContactNumber.Size = new Size(376, 30);
-            txtContactNumber.TabIndex = 8;
-            txtContactNumber.Text = "Enter Phone Number";
-            txtContactNumber.TextAlign = HorizontalAlignment.Center;
             // 
             // txtEmail
             // 
@@ -199,14 +173,13 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(376, 30);
             txtEmail.TabIndex = 8;
-            txtEmail.Text = "Enter Your Email";
             txtEmail.TextAlign = HorizontalAlignment.Center;
             // 
             // lblPassword
             // 
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Merriweather", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPassword.Location = new Point(309, 456);
+            lblPassword.Location = new Point(1018, 187);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(95, 24);
             lblPassword.TabIndex = 4;
@@ -215,11 +188,10 @@
             // txtPassword
             // 
             txtPassword.Font = new Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(515, 451);
+            txtPassword.Location = new Point(1224, 182);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(376, 30);
             txtPassword.TabIndex = 9;
-            txtPassword.Text = "Create Strong Password";
             txtPassword.TextAlign = HorizontalAlignment.Center;
             // 
             // DGVMember
@@ -313,7 +285,6 @@
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(377, 30);
             txtLastName.TabIndex = 20;
-            txtLastName.Text = "Enter Last Name";
             txtLastName.TextAlign = HorizontalAlignment.Center;
             // 
             // label3
@@ -397,6 +368,7 @@
             btnEdit.TabIndex = 27;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnDelete
             // 
@@ -432,7 +404,6 @@
             Controls.Add(DGVMember);
             Controls.Add(txtPassword);
             Controls.Add(txtEmail);
-            Controls.Add(txtContactNumber);
             Controls.Add(cmbTrainer);
             Controls.Add(cmbGender);
             Controls.Add(txtAddress);
@@ -440,7 +411,6 @@
             Controls.Add(txtName);
             Controls.Add(label6);
             Controls.Add(label5);
-            Controls.Add(label4);
             Controls.Add(lblPassword);
             Controls.Add(label1);
             Controls.Add(lblGender);
@@ -464,7 +434,6 @@
         private Label lblName;
         private Label lblAge;
         private Label lblGender;
-        private Label label4;
         private Label label5;
         private Label label6;
         private TextBox txtName;
@@ -473,7 +442,6 @@
         private TextBox textBox4;
         private TextBox txtAddress;
         private ComboBox cmbGender;
-        private TextBox txtContactNumber;
         private TextBox txtEmail;
         private Label lblPassword;
         private TextBox txtPassword;

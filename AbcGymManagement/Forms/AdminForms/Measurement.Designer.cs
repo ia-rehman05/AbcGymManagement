@@ -43,11 +43,11 @@
             btnEdit = new Button();
             btnDelete = new Button();
             btnSave = new Button();
-            DGVMeasurement = new DataGridView();
+            DgvMeasurement = new DataGridView();
             panel1 = new Panel();
             pictureBox11 = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)DGVMeasurement).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DgvMeasurement).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             SuspendLayout();
@@ -132,7 +132,6 @@
             txtHeight.Name = "txtHeight";
             txtHeight.Size = new Size(329, 30);
             txtHeight.TabIndex = 10;
-            txtHeight.Text = "Height in cm";
             txtHeight.TextAlign = HorizontalAlignment.Center;
             // 
             // txtWeight
@@ -142,7 +141,6 @@
             txtWeight.Name = "txtWeight";
             txtWeight.Size = new Size(329, 30);
             txtWeight.TabIndex = 10;
-            txtWeight.Text = "Height in cm";
             txtWeight.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBodyFat
@@ -152,7 +150,6 @@
             txtBodyFat.Name = "txtBodyFat";
             txtBodyFat.Size = new Size(329, 30);
             txtBodyFat.TabIndex = 10;
-            txtBodyFat.Text = "Height in cm";
             txtBodyFat.TextAlign = HorizontalAlignment.Center;
             // 
             // txtMuscleMass
@@ -162,7 +159,6 @@
             txtMuscleMass.Name = "txtMuscleMass";
             txtMuscleMass.Size = new Size(329, 30);
             txtMuscleMass.TabIndex = 10;
-            txtMuscleMass.Text = "Height in cm";
             txtMuscleMass.TextAlign = HorizontalAlignment.Center;
             // 
             // btnEdit
@@ -201,16 +197,16 @@
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
             // 
-            // DGVMeasurement
+            // DgvMeasurement
             // 
-            DGVMeasurement.BackgroundColor = SystemColors.ButtonHighlight;
-            DGVMeasurement.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVMeasurement.Location = new Point(237, 479);
-            DGVMeasurement.Name = "DGVMeasurement";
-            DGVMeasurement.RowHeadersWidth = 62;
-            DGVMeasurement.RowTemplate.Height = 33;
-            DGVMeasurement.Size = new Size(1477, 231);
-            DGVMeasurement.TabIndex = 14;
+            DgvMeasurement.BackgroundColor = SystemColors.ButtonHighlight;
+            DgvMeasurement.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvMeasurement.Location = new Point(288, 479);
+            DgvMeasurement.Name = "DgvMeasurement";
+            DgvMeasurement.RowHeadersWidth = 62;
+            DgvMeasurement.RowTemplate.Height = 33;
+            DgvMeasurement.Size = new Size(1426, 231);
+            DgvMeasurement.TabIndex = 14;
             // 
             // panel1
             // 
@@ -245,7 +241,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1713, 710);
             Controls.Add(panel1);
-            Controls.Add(DGVMeasurement);
+            Controls.Add(DgvMeasurement);
             Controls.Add(btnSave);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
@@ -266,7 +262,7 @@
             Name = "Measurement";
             Text = "Measurement";
             Load += Measurement_Load;
-            ((System.ComponentModel.ISupportInitialize)DGVMeasurement).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DgvMeasurement).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ResumeLayout(false);
@@ -288,7 +284,7 @@
         private Button btnEdit;
         private Button btnDelete;
         private Button btnSave;
-        private DataGridView DGVMeasurement;
+        private DataGridView DgvMeasurement;
         private Panel panel1;
         private FlowLayoutPanel flowLayoutPanel1;
         private PictureBox pictureBox11;

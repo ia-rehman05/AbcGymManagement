@@ -17,7 +17,7 @@ namespace GMS.Service.Dtos.Members
 
         public string Address { get; set; }
         public DateTime? DateOfBirth { get; set; }
-        public string ProfileImage { get; set; }
+        public string? ProfileImage { get; set; }
         public bool IsActive { get; set; }
     }
 }

@@ -10,7 +10,6 @@ namespace GMS.Service.Dtos.InventoryItems
     public class InventoryItemDto
     {
         public Guid Id { get; set; }
-
         [Required(ErrorMessage = "HallId is required.")]
         public Guid HallId { get; set; }
 

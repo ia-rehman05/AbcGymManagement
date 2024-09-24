@@ -1,4 +1,5 @@
-﻿using GMS.Service.Dtos.Memberships;
+﻿using AbcGymManagement.Dtos.Memberships;
+using GMS.Service.Dtos.Packages;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace AbcGymManagement.ApiRequestHandler
         }
 
         #region Add Membership
-        public async Task<bool> AddMembershipAsync(string fullUrl, MembershipDto membershipDto)
+        public async Task<bool> AddMembershipAsync(string fullUrl, MembershipCreatedDto membershipDto)
         {
             var jsonContent = JsonConvert.SerializeObject(membershipDto);
             var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
@@ -33,7 +34,7 @@ namespace AbcGymManagement.ApiRequestHandler
 
                 if (response.IsSuccessStatusCode)
                 {
-                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<MembershipDto>>(responseContent);
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<MembershipResponseDto>>(responseContent);
                     return apiResponse.Success;
                 }
                 else
@@ -49,11 +50,36 @@ namespace AbcGymManagement.ApiRequestHandler
             }
         }
         #endregion
-
-        #region Update Membership
-        public async Task<bool> UpdateMembershipAsync(string fullUrl, MembershipDto membershipDto)
+        #region DeleteMembership
+        public async Task<bool> DeleteMembershipByIdAsync(string fullUrl)
         {
-            var jsonContent = JsonConvert.SerializeObject(membershipDto);
+            try
+            {
+                HttpResponseMessage response = await _membership.DeleteAsync(fullUrl);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    string responseContent = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"Error: {response.StatusCode}, {responseContent}");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+                return false;
+            }
+        }
+        #endregion
+
+        #region Update Room
+        public async Task<bool> UpdateMembershipAsync(string fullUrl, MembershipResponseDto membershipResponse)
+        {
+            var jsonContent = JsonConvert.SerializeObject(membershipResponse);
             var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
             try
@@ -63,7 +89,7 @@ namespace AbcGymManagement.ApiRequestHandler
                 if (response.IsSuccessStatusCode)
                 {
                     var responseContent = await response.Content.ReadAsStringAsync();
-                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<MembershipDto>>(responseContent);
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<MembershipResponseDto>>(responseContent);
                     return apiResponse.Success;
                 }
                 else
@@ -79,10 +105,11 @@ namespace AbcGymManagement.ApiRequestHandler
                 return false;
             }
         }
+
         #endregion
 
         #region Get All Memberships
-        public async Task<List<MembershipDto>> GetAllMembershipsAsync(string relativeUrl)
+        public async Task<List<MembershipResponseDto>> GetAllMembershipsAsync(string relativeUrl)
         {
             try
             {
@@ -91,7 +118,7 @@ namespace AbcGymManagement.ApiRequestHandler
                 if (response.IsSuccessStatusCode)
                 {
                     string responseContent = await response.Content.ReadAsStringAsync();
-                    var apiListResponse = JsonConvert.DeserializeObject<ApiListResponse<MembershipDto>>(responseContent);
+                    var apiListResponse = JsonConvert.DeserializeObject<ApiListResponse<MembershipResponseDto>>(responseContent);
 
                     if (apiListResponse != null && apiListResponse.Success)
                     {

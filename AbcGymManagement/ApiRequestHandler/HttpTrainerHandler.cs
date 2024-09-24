@@ -88,7 +88,7 @@ namespace AbcGymManagement.ApiRequestHandler
         
 #endregion
 
-        #region Get All Rooms
+        #region Get All 
         public async Task<List<TrainerResponseDto>> GetAllTrainersAsync(string relativeUrl)
         {
             try
@@ -128,20 +128,13 @@ namespace AbcGymManagement.ApiRequestHandler
         #region Delete Trainer
         public async Task<bool> DeleteTrainerAsync(string fullUrl)
         {
-            if (string.IsNullOrEmpty(fullUrl))
-            {
-                throw new ArgumentNullException(nameof(fullUrl), "The full URL cannot be null or empty.");
-            }
-
             try
             {
                 HttpResponseMessage response = await _trainer.DeleteAsync(fullUrl);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    var responseContent = await response.Content.ReadAsStringAsync();
-                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<TrainerResponseDto>>(responseContent);
-                    return apiResponse?.Success ?? false;
+                    return true;
                 }
                 else
                 {

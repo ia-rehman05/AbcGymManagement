@@ -1,5 +1,6 @@
 using AbcGymManagement.Forms;
 using AbcGymManagement.Forms.AdminForms;
+using System.Net.Mail;
 
 namespace AbcGymManagement
 {

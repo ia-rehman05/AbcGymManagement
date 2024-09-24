@@ -221,7 +221,6 @@
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(377, 30);
             txtLastName.TabIndex = 105;
-            txtLastName.Text = "Enter Last Name";
             txtLastName.TextAlign = HorizontalAlignment.Center;
             // 
             // label3
@@ -241,7 +240,6 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(376, 30);
             txtPassword.TabIndex = 103;
-            txtPassword.Text = "Create Strong Password";
             txtPassword.TextAlign = HorizontalAlignment.Center;
             // 
             // txtEmail
@@ -251,7 +249,6 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(376, 30);
             txtEmail.TabIndex = 102;
-            txtEmail.Text = "Enter Your Email";
             txtEmail.TextAlign = HorizontalAlignment.Center;
             // 
             // txtContactNumber
@@ -261,8 +258,8 @@
             txtContactNumber.Name = "txtContactNumber";
             txtContactNumber.Size = new Size(376, 30);
             txtContactNumber.TabIndex = 101;
-            txtContactNumber.Text = "Enter Phone Number";
             txtContactNumber.TextAlign = HorizontalAlignment.Center;
+            txtContactNumber.TextChanged += txtContactNumber_TextChanged;
             // 
             // cmbGender
             // 
@@ -273,7 +270,6 @@
             cmbGender.Name = "cmbGender";
             cmbGender.Size = new Size(376, 34);
             cmbGender.TabIndex = 100;
-            cmbGender.Text = "                              Select Your Gender";
             cmbGender.UseWaitCursor = true;
             // 
             // txtAddress
@@ -284,7 +280,6 @@
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(377, 86);
             txtAddress.TabIndex = 99;
-            txtAddress.Text = "Enter Current Address";
             txtAddress.TextAlign = HorizontalAlignment.Center;
             // 
             // txtAge
@@ -294,7 +289,6 @@
             txtAge.Name = "txtAge";
             txtAge.Size = new Size(377, 30);
             txtAge.TabIndex = 98;
-            txtAge.Text = "Enter Age";
             txtAge.TextAlign = HorizontalAlignment.Center;
             // 
             // txtFirstName
@@ -304,7 +298,6 @@
             txtFirstName.Name = "txtFirstName";
             txtFirstName.Size = new Size(377, 30);
             txtFirstName.TabIndex = 97;
-            txtFirstName.Text = "Enter First Name";
             txtFirstName.TextAlign = HorizontalAlignment.Center;
             // 
             // label6

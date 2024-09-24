@@ -56,36 +56,36 @@ namespace AbcGymManagement.ApiRequestHandler
         }
         #endregion
 
-        #region Update Hall
-        public async Task<bool> UpdateHallAsync(string fullUrl, HallDto hallDto)
-        {
-            var jsonContent = JsonConvert.SerializeObject(hallDto);
-            var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
-
-            try
+            #region Update Hall
+            public async Task<bool> UpdateHallAsync(string fullUrl, HallDto hallDto)
             {
-                HttpResponseMessage response = await _client.PutAsync(fullUrl, content);
+                var jsonContent = JsonConvert.SerializeObject(hallDto);
+                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
-                if (response.IsSuccessStatusCode)
+                try
                 {
-                    var responseContent = await response.Content.ReadAsStringAsync();
-                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<HallDto>>(responseContent);
-                    return apiResponse.Success;
+                    HttpResponseMessage response = await _client.PutAsync(fullUrl, content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseContent = await response.Content.ReadAsStringAsync();
+                        var apiResponse = JsonConvert.DeserializeObject<ApiResponse<HallDto>>(responseContent);
+                        return apiResponse.Success;
+                    }
+                    else
+                    {
+                        string responseContent = await response.Content.ReadAsStringAsync();
+                        Console.WriteLine($"Error: {response.StatusCode}, {responseContent}");
+                        return false;
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    string responseContent = await response.Content.ReadAsStringAsync();
-                    Console.WriteLine($"Error: {response.StatusCode}, {responseContent}");
+                    Console.WriteLine($"Exception: {ex.Message}");
                     return false;
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Exception: {ex.Message}");
-                return false;
-            }
-        }
-        #endregion
+            #endregion
 
         #region DeleteHall
         public async Task<bool> DeleteHallByIdAsync(string fullUrl)
@@ -187,14 +187,7 @@ namespace AbcGymManagement.ApiRequestHandler
                 throw;
             }
         }
-
-
-
-
-
         #endregion
-
-
         #region not used methods
         public RestResponse SendRequestAsync(string endpoint, Method method, object body = null)
         {

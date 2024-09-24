@@ -257,5 +257,16 @@ namespace AbcGymManagement
         {
 
         }
+
+        private void btnRoomType_Click(object sender, EventArgs e)
+        {
+            loadform(new RoomType());
+
+        }
+
+        private void btnPackage_Click(object sender, EventArgs e)
+        {
+            loadform(new Package());
+        }
     }
 }

@@ -1,4 +1,8 @@
-﻿using System;
+﻿using AbcGymManagement.ApiRequestHandler;
+using AbcGymManagement.Dtos.Memberships;
+using GMS.Service.Dtos.Members;
+using GMS.Service.Dtos.Packages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,50 +11,94 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace AbcGymManagement.Forms
 {
     public partial class Membership : Form
     {
+        private readonly HttpMembershipHandler _membershipHandler;
+        private readonly HttpMembertHandler _memberHandler;
+        private readonly HttpPackageHandler _packageHandler;
+        private string _apiUrl = "https://localhost:7160/api/Membership";
+        private string _packageUrl = "https://localhost:7160/api/Package";
+
+        private Guid? _selectedMembershipId = null;
+
+
         public Membership()
         {
             InitializeComponent();
-            LoadMembershipSchemes();
+            _membershipHandler = new HttpMembershipHandler("https://localhost:7160/api/");
+            _memberHandler = new HttpMembertHandler("https://localhost:7160/api/");
+            _packageHandler = new HttpPackageHandler("https://localhost:7160/api/");
+
+            LoadMembers();
+            LoadPackages();
+            LoadMemership();
         }
 
-        private void LoadMembershipSchemes()
+        private async void LoadMembers()
         {
-            cmbScheme.Items.Add("Basic");
-            cmbScheme.Items.Add("Premium");
-            cmbScheme.Items.Add("VIP");
+            var members = await _memberHandler.GetAllMembersAsync("Member");
+            cmbMember.DataSource = members;
+            cmbMember.DisplayMember = "FirstName";
+            cmbMember.ValueMember = "Id";
         }
-        private void DisplaySchemeDetails(string scheme)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
-            // Sample logic to display scheme details
-            switch (scheme)
+            var membershipdto = new MembershipCreatedDto()
             {
-                case "Basic":
-                    txtAmout.Text = "1500";
-                    txtDuration.Text = "1 Month";
-                    // Set other details
-                    break;
-                case "Premium":
-                    txtAmout.Text = "4000";
-                    txtDuration.Text = "3 Months";
-                    // Set other details
-                    break;
-                case "VIP":
-                    txtAmout.Text = "100,000";
-                    txtDuration.Text = "1 Year";
-                    // Set other details
-                    break;
+                MemberId = cmbMember.SelectedValue.ToString(),
+                PackageId = (Guid?)cmbPackage.SelectedValue,
+                IsActive = ChkIsActive.Checked
+            };
+            bool isSuccess = await _membershipHandler.AddMembershipAsync(_apiUrl, membershipdto);
+
+            if (isSuccess)
+            {
+                MessageBox.Show("Membership added successfully!");
+                LoadMemership();
+            }
+            else
+            {
+                MessageBox.Show("Failed to add Membership.");
             }
         }
-    
-    private void cmbScheme_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        private async void LoadMemership()
         {
-            string selectedScheme = cmbScheme.SelectedItem.ToString();
-            DisplaySchemeDetails(selectedScheme);
+            try
+            {
+                var membership = await _membershipHandler.GetAllMembershipsAsync(_apiUrl);
+
+                if (membership != null)
+                {
+                    DGVMembership.DataSource = membership;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to Load membership.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Exception: {ex.Message}");
+            }
+        }
+        private async void LoadPackages()
+        {
+            var package = await _packageHandler.GetAllpackagesAsync(_packageUrl);
+            cmbPackage.DataSource = package;
+            cmbPackage.DisplayMember = "Name";
+            cmbPackage.ValueMember = "Id";
+        }
+
+
+        private void cmbScheme_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
         private void lblMemberName_Click(object sender, EventArgs e)
         {
@@ -62,6 +110,79 @@ namespace AbcGymManagement.Forms
 
         }
 
-        
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DGVMembership_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (DGVMembership.SelectedRows.Count > 0)
+            {
+                var selectedRow = DGVMembership.SelectedRows[0];
+                _selectedMembershipId = (Guid)selectedRow.Cells["Id"].Value;
+                cmbMember.SelectedValue = selectedRow.Cells["MemberId"].Value.ToString();
+                cmbPackage.SelectedValue = selectedRow.Cells["PackageId"].Value;
+                ChkIsActive.Checked = Convert.ToBoolean(selectedRow.Cells["IsActive"].Value);
+            }
+        }
+
+        private async void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (_selectedMembershipId.HasValue)
+            {
+                string fullUrl = $"{_apiUrl}/{_selectedMembershipId.Value}";
+
+                bool isSuccess = await _membershipHandler.DeleteMembershipByIdAsync(fullUrl);
+
+                if (isSuccess)
+                {
+                    MessageBox.Show("Membership deleted successfully!");
+                    LoadMemership();
+                }
+
+
+                else
+                {
+                    MessageBox.Show("Failed to delete Membership.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a Membership to delete.");
+            }
+        }
+
+        private async void btnEdit_Click(object sender, EventArgs e)
+        {
+
+            if (_selectedMembershipId.HasValue)
+            {
+                var updatedmembership = new MembershipResponseDto
+                {
+                    MemberId = cmbMember.SelectedValue.ToString(),
+                    PackageId = (Guid?)cmbPackage.SelectedValue,
+                    IsActive = ChkIsActive.Checked
+                };
+
+                string fullUrl = $"{_apiUrl}/{_selectedMembershipId.Value}";
+                bool isSuccess = await _membershipHandler.UpdateMembershipAsync(fullUrl, updatedmembership);
+
+                if (isSuccess)
+                {
+                    MessageBox.Show("MemberShip updated successfully!");
+                    LoadMemership();
+
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update Memberhip.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a Membership to update.");
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AbcGymManagement.Forms;
 using GMS.Service.Dtos.Members;
+using GMS.Service.Dtos.Packages;
 using GMS.Service.Dtos.Room;
 using GMS.Service.Dtos.Trainers;
 using Newtonsoft.Json;
@@ -24,7 +25,7 @@ namespace AbcGymManagement.ApiRequestHandler
         }
 
         #region Add Member
-        public async Task<bool> AddMemberAsync(string fullUrl, MemberCreateDto memberCreateDto)
+        public async Task<bool> AddMemberAsync(string fullUrl, MemberCreatedDto memberCreateDto)
         {
             var jsonContent = JsonConvert.SerializeObject(memberCreateDto);
             var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
@@ -35,7 +36,7 @@ namespace AbcGymManagement.ApiRequestHandler
                 var responseContent = await response.Content.ReadAsStringAsync();
                 if (response.IsSuccessStatusCode)
                 {
-                    var apiResponse = JsonConvert.DeserializeObject<ApiListResponse<MemberResponseDto>>(responseContent);
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<MemberResponseDto>>(responseContent);
                     return apiResponse.Success;
                 }
             
@@ -55,7 +56,7 @@ namespace AbcGymManagement.ApiRequestHandler
     
     #endregion
     #region Update Member
-    public async Task<bool> UpdateMemberAsync(string fullUrl, MemberCreateDto memberDto)
+    public async Task<bool> UpdateMemberAsync(string fullUrl, MemberCreatedDto memberDto)
         {
             var jsonContent = JsonConvert.SerializeObject(memberDto);
             var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
@@ -67,7 +68,7 @@ namespace AbcGymManagement.ApiRequestHandler
                 if (response.IsSuccessStatusCode)
                 {
                     var responseContent = await response.Content.ReadAsStringAsync();
-                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<MemberResponseDto>>(responseContent);
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<MemberCreatedDto>>(responseContent);
                     return apiResponse.Success;
                 }
                 else
@@ -90,7 +91,6 @@ namespace AbcGymManagement.ApiRequestHandler
             try
             {
                 HttpResponseMessage response = await _memberClient.GetAsync(relativeUrl);
-                // Debug output for URL and response
                 Console.WriteLine($"Request URL: {relativeUrl}");
                 Console.WriteLine($"Response Status: {response.StatusCode}");
 
@@ -125,8 +125,8 @@ namespace AbcGymManagement.ApiRequestHandler
 
 
         #endregion
-        #region Delete Trainer
-        public async Task<bool> DeleteTrainerAsync(string fullUrl)
+        #region Delete Member
+        public async Task<bool> DeleteMemberAsync(string fullUrl)
         {
             if (string.IsNullOrEmpty(fullUrl))
             {

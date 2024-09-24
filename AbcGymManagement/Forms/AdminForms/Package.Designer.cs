@@ -110,6 +110,8 @@
             DGVPackage.RowTemplate.Height = 33;
             DGVPackage.Size = new Size(1421, 260);
             DGVPackage.TabIndex = 94;
+            DGVPackage.CellContentClick += DGVPackage_CellContentClick;
+            DGVPackage.DoubleClick += DGVPackage_DoubleClick;
             // 
             // btnSave
             // 
@@ -122,6 +124,7 @@
             btnSave.TabIndex = 93;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // btnDelete
             // 
@@ -134,6 +137,7 @@
             btnDelete.TabIndex = 92;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
@@ -146,6 +150,7 @@
             btnEdit.TabIndex = 91;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // label1
             // 

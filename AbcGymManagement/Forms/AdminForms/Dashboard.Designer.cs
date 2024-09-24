@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             MainPanel = new Panel();
+            btnPackage = new Button();
+            btnRoomType = new Button();
             panel3 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
@@ -98,6 +100,8 @@
             // MainPanel
             // 
             MainPanel.BackColor = Color.FromArgb(64, 64, 64);
+            MainPanel.Controls.Add(btnPackage);
+            MainPanel.Controls.Add(btnRoomType);
             MainPanel.Controls.Add(panel3);
             MainPanel.Controls.Add(BtnAddMember);
             MainPanel.Controls.Add(BtnMeasurements);
@@ -118,6 +122,34 @@
             MainPanel.Size = new Size(239, 710);
             MainPanel.TabIndex = 0;
             MainPanel.Paint += panel1_Paint;
+            // 
+            // btnPackage
+            // 
+            btnPackage.BackColor = Color.FromArgb(64, 64, 64);
+            btnPackage.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnPackage.ForeColor = SystemColors.ButtonHighlight;
+            btnPackage.Location = new Point(-14, 537);
+            btnPackage.Name = "btnPackage";
+            btnPackage.Size = new Size(262, 48);
+            btnPackage.TabIndex = 12;
+            btnPackage.Text = "            Package";
+            btnPackage.TextAlign = ContentAlignment.MiddleLeft;
+            btnPackage.UseVisualStyleBackColor = false;
+            btnPackage.Click += btnPackage_Click;
+            // 
+            // btnRoomType
+            // 
+            btnRoomType.BackColor = Color.FromArgb(64, 64, 64);
+            btnRoomType.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRoomType.ForeColor = SystemColors.ButtonHighlight;
+            btnRoomType.Location = new Point(-12, 619);
+            btnRoomType.Name = "btnRoomType";
+            btnRoomType.Size = new Size(262, 48);
+            btnRoomType.TabIndex = 14;
+            btnRoomType.Text = "            Room Type";
+            btnRoomType.TextAlign = ContentAlignment.MiddleLeft;
+            btnRoomType.UseVisualStyleBackColor = false;
+            btnRoomType.Click += btnRoomType_Click;
             // 
             // panel3
             // 
@@ -328,10 +360,10 @@
             btnPayment.BackColor = Color.FromArgb(64, 64, 64);
             btnPayment.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnPayment.ForeColor = SystemColors.ButtonHighlight;
-            btnPayment.Location = new Point(-12, 540);
+            btnPayment.Location = new Point(-12, 576);
             btnPayment.Name = "btnPayment";
             btnPayment.Size = new Size(262, 48);
-            btnPayment.TabIndex = 12;
+            btnPayment.TabIndex = 13;
             btnPayment.Text = "            Payment";
             btnPayment.TextAlign = ContentAlignment.MiddleLeft;
             btnPayment.UseVisualStyleBackColor = false;
@@ -342,10 +374,10 @@
             btnLogout.BackColor = Color.FromArgb(64, 64, 64);
             btnLogout.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnLogout.ForeColor = SystemColors.ButtonHighlight;
-            btnLogout.Location = new Point(-12, 584);
+            btnLogout.Location = new Point(-12, 663);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(262, 48);
-            btnLogout.TabIndex = 13;
+            btnLogout.TabIndex = 15;
             btnLogout.Text = "            Logout";
             btnLogout.TextAlign = ContentAlignment.MiddleLeft;
             btnLogout.UseVisualStyleBackColor = false;
@@ -697,5 +729,7 @@
         private PictureBox pictureBox11;
         private PictureBox pictureBox2;
         private Panel Daughterpanel;
+        private Button btnRoomType;
+        private Button btnPackage;
     }
 }

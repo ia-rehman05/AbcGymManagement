@@ -110,9 +110,9 @@ namespace AbcGymManagement.Forms
                 MessageBox.Show("Failed to update trainer.");
             }
         }
-        
 
-            private async void btnDelete_Click(object sender, EventArgs e)
+
+        private async void btnDelete_Click(object sender, EventArgs e)
         {
             if (_selectedTrainerId.HasValue)
             {
@@ -206,6 +206,11 @@ namespace AbcGymManagement.Forms
                 txtExperince.Text = selectedRow.Cells["TotalExperience"].Value.ToString();
                 txtShift.Text = selectedRow.Cells["Shift"].Value.ToString();
             }
+        }
+
+        private void txtContactNumber_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

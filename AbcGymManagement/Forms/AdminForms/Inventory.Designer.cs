@@ -32,24 +32,26 @@
             lblPayment = new Label();
             lblHallNam = new Label();
             lblMemberName = new Label();
-            cmbMember = new ComboBox();
+            cmbHall = new ComboBox();
             lblMembers = new Label();
             txtQuantity = new ComboBox();
             txtItemName = new TextBox();
             label1 = new Label();
             lblName = new Label();
-            txtName = new TextBox();
+            txtSchedule = new TextBox();
             label2 = new Label();
             label3 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dtpLastMainatainanace = new DateTimePicker();
             btnSave = new Button();
             btnEdit = new Button();
             btnDelete = new Button();
-            DGVMeasurement = new DataGridView();
+            DGVInventory = new DataGridView();
             panel1 = new Panel();
             pictureBox15 = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)DGVMeasurement).BeginInit();
+            dtpNextMaintainanceDate = new DateTimePicker();
+            label4 = new Label();
+            ((System.ComponentModel.ISupportInitialize)DGVInventory).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
             SuspendLayout();
@@ -84,15 +86,15 @@
             lblMemberName.Size = new Size(0, 28);
             lblMemberName.TabIndex = 54;
             // 
-            // cmbMember
+            // cmbHall
             // 
-            cmbMember.Font = new Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbMember.FormattingEnabled = true;
-            cmbMember.Location = new Point(1171, 86);
-            cmbMember.Name = "cmbMember";
-            cmbMember.Size = new Size(406, 34);
-            cmbMember.TabIndex = 53;
-            cmbMember.Text = "                                  Select Hall ID";
+            cmbHall.Font = new Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbHall.FormattingEnabled = true;
+            cmbHall.Location = new Point(1171, 86);
+            cmbHall.Name = "cmbHall";
+            cmbHall.Size = new Size(406, 34);
+            cmbHall.TabIndex = 53;
+            cmbHall.Text = "                                  Select Hall ID";
             // 
             // lblMembers
             // 
@@ -107,7 +109,7 @@
             // txtQuantity
             // 
             txtQuantity.FormattingEnabled = true;
-            txtQuantity.Items.AddRange(new object[] { "Aerobics Hall", "Weightlifting Hall", "Cardio Hall", "Sports Hall", "Multipurpose Hall", "Martial Arts Hall (Dojo)", "Swimming Pool Hall", "Yoga and Meditation Hall", "Spinning Hall", "CrossFit Hall" });
+            txtQuantity.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
             txtQuantity.Location = new Point(517, 337);
             txtQuantity.Name = "txtQuantity";
             txtQuantity.Size = new Size(406, 33);
@@ -141,18 +143,18 @@
             lblName.TabIndex = 57;
             lblName.Text = "Item Name";
             // 
-            // txtName
+            // txtSchedule
             // 
-            txtName.Location = new Point(1221, 277);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(356, 31);
-            txtName.TabIndex = 62;
+            txtSchedule.Location = new Point(1212, 212);
+            txtSchedule.Name = "txtSchedule";
+            txtSchedule.Size = new Size(356, 31);
+            txtSchedule.TabIndex = 62;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Merriweather", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(984, 341);
+            label2.Location = new Point(975, 276);
             label2.Name = "label2";
             label2.Size = new Size(218, 24);
             label2.TabIndex = 60;
@@ -162,18 +164,18 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Merriweather", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(984, 284);
+            label3.Location = new Point(975, 219);
             label3.Name = "label3";
             label3.Size = new Size(217, 24);
             label3.TabIndex = 61;
             label3.Text = "Maintainance Schedule";
             // 
-            // dateTimePicker1
+            // dtpLastMainatainanace
             // 
-            dateTimePicker1.Location = new Point(1221, 336);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(356, 31);
-            dateTimePicker1.TabIndex = 63;
+            dtpLastMainatainanace.Location = new Point(1212, 271);
+            dtpLastMainatainanace.Name = "dtpLastMainatainanace";
+            dtpLastMainatainanace.Size = new Size(356, 31);
+            dtpLastMainatainanace.TabIndex = 63;
             // 
             // btnSave
             // 
@@ -185,6 +187,7 @@
             btnSave.TabIndex = 64;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // btnEdit
             // 
@@ -197,6 +200,7 @@
             btnEdit.TabIndex = 65;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnDelete
             // 
@@ -209,18 +213,20 @@
             btnDelete.TabIndex = 66;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
-            // DGVMeasurement
+            // DGVInventory
             // 
-            DGVMeasurement.AllowUserToDeleteRows = false;
-            DGVMeasurement.BackgroundColor = SystemColors.ButtonHighlight;
-            DGVMeasurement.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVMeasurement.Location = new Point(288, 476);
-            DGVMeasurement.Name = "DGVMeasurement";
-            DGVMeasurement.RowHeadersWidth = 62;
-            DGVMeasurement.RowTemplate.Height = 33;
-            DGVMeasurement.Size = new Size(1426, 233);
-            DGVMeasurement.TabIndex = 67;
+            DGVInventory.AllowUserToDeleteRows = false;
+            DGVInventory.BackgroundColor = SystemColors.ButtonHighlight;
+            DGVInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVInventory.Location = new Point(288, 476);
+            DGVInventory.Name = "DGVInventory";
+            DGVInventory.RowHeadersWidth = 62;
+            DGVInventory.RowTemplate.Height = 33;
+            DGVInventory.Size = new Size(1426, 233);
+            DGVInventory.TabIndex = 67;
+            DGVInventory.MouseDoubleClick += DGVInventory_MouseDoubleClick;
             // 
             // panel1
             // 
@@ -249,18 +255,37 @@
             flowLayoutPanel1.Size = new Size(412, 89);
             flowLayoutPanel1.TabIndex = 76;
             // 
+            // dtpNextMaintainanceDate
+            // 
+            dtpNextMaintainanceDate.Location = new Point(1212, 323);
+            dtpNextMaintainanceDate.Name = "dtpNextMaintainanceDate";
+            dtpNextMaintainanceDate.Size = new Size(356, 31);
+            dtpNextMaintainanceDate.TabIndex = 79;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Merriweather", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(975, 328);
+            label4.Name = "label4";
+            label4.Size = new Size(223, 24);
+            label4.TabIndex = 78;
+            label4.Text = "Next Maintainance Date";
+            // 
             // Inventory
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1713, 710);
+            Controls.Add(dtpNextMaintainanceDate);
+            Controls.Add(label4);
             Controls.Add(panel1);
-            Controls.Add(DGVMeasurement);
+            Controls.Add(DGVInventory);
             Controls.Add(btnSave);
             Controls.Add(btnEdit);
             Controls.Add(btnDelete);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(txtName);
+            Controls.Add(dtpLastMainatainanace);
+            Controls.Add(txtSchedule);
             Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(txtQuantity);
@@ -269,14 +294,15 @@
             Controls.Add(lblName);
             Controls.Add(lblHallNam);
             Controls.Add(lblMemberName);
-            Controls.Add(cmbMember);
+            Controls.Add(cmbHall);
             Controls.Add(lblMembers);
             Controls.Add(lblPayment);
             Controls.Add(flowLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Inventory";
             Text = "Inventory";
-            ((System.ComponentModel.ISupportInitialize)DGVMeasurement).EndInit();
+            Load += Inventory_Load;
+            ((System.ComponentModel.ISupportInitialize)DGVInventory).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
             ResumeLayout(false);
@@ -287,22 +313,24 @@
         private Label lblPayment;
         private Label lblHallNam;
         private Label lblMemberName;
-        private ComboBox cmbMember;
+        private ComboBox cmbHall;
         private Label lblMembers;
         private ComboBox txtQuantity;
         private TextBox txtItemName;
         private Label label1;
         private Label lblName;
-        private TextBox txtName;
+        private TextBox txtSchedule;
         private Label label2;
         private Label label3;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpLastMainatainanace;
         private Button btnSave;
         private Button btnEdit;
         private Button btnDelete;
-        private DataGridView DGVMeasurement;
+        private DataGridView DGVInventory;
         private Panel panel1;
         private FlowLayoutPanel flowLayoutPanel1;
         private PictureBox pictureBox15;
+        private DateTimePicker dtpNextMaintainanceDate;
+        private Label label4;
     }
 }

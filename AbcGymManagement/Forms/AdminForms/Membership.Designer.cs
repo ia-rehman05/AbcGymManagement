@@ -29,125 +29,82 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Membership));
-            DGVMeasurement = new DataGridView();
+            DGVMembership = new DataGridView();
             btnSave = new Button();
             btnDelete = new Button();
             btnEdit = new Button();
-            label4 = new Label();
-            lblPrice = new Label();
-            lblDuration = new Label();
-            lblName = new Label();
             lblMembers = new Label();
             lblMembership = new Label();
-            label1 = new Label();
-            txtAmout = new TextBox();
-            txtDuration = new TextBox();
-            DTPStart = new DateTimePicker();
-            DTPEnd = new DateTimePicker();
-            cmbScheme = new ComboBox();
-            comboBox2 = new ComboBox();
-            lblMemberName = new Label();
-            lblMemberNamr = new Label();
+            cmbMember = new ComboBox();
             panel1 = new Panel();
             pictureBox9 = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)DGVMeasurement).BeginInit();
+            cmbPackage = new ComboBox();
+            label2 = new Label();
+            ChkIsActive = new RadioButton();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)DGVMembership).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // DGVMeasurement
+            // DGVMembership
             // 
-            DGVMeasurement.BackgroundColor = SystemColors.ButtonHighlight;
-            DGVMeasurement.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVMeasurement.Location = new Point(291, 478);
-            DGVMeasurement.Name = "DGVMeasurement";
-            DGVMeasurement.RowHeadersWidth = 62;
-            DGVMeasurement.RowTemplate.Height = 33;
-            DGVMeasurement.Size = new Size(1421, 231);
-            DGVMeasurement.TabIndex = 30;
+            DGVMembership.BackgroundColor = SystemColors.ButtonHighlight;
+            DGVMembership.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVMembership.Location = new Point(290, 478);
+            DGVMembership.Name = "DGVMembership";
+            DGVMembership.RowHeadersWidth = 62;
+            DGVMembership.RowTemplate.Height = 33;
+            DGVMembership.Size = new Size(682, 231);
+            DGVMembership.TabIndex = 30;
+            DGVMembership.MouseDoubleClick += DGVMembership_MouseDoubleClick;
             // 
             // btnSave
             // 
             btnSave.BackColor = Color.FromArgb(64, 64, 64);
             btnSave.Font = new Font("Bell MT", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = SystemColors.Control;
-            btnSave.Location = new Point(1188, 438);
+            btnSave.Location = new Point(582, 410);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(240, 34);
             btnSave.TabIndex = 29;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // btnDelete
             // 
             btnDelete.BackColor = Color.FromArgb(64, 64, 64);
             btnDelete.Font = new Font("Bell MT", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnDelete.ForeColor = SystemColors.ButtonHighlight;
-            btnDelete.Location = new Point(1316, 398);
+            btnDelete.Location = new Point(710, 370);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(112, 34);
             btnDelete.TabIndex = 28;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
             btnEdit.BackColor = Color.FromArgb(64, 64, 64);
             btnEdit.Font = new Font("Bell MT", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnEdit.ForeColor = SystemColors.Control;
-            btnEdit.Location = new Point(1188, 398);
+            btnEdit.Location = new Point(582, 370);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(112, 34);
             btnEdit.TabIndex = 27;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Merriweather", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(976, 355);
-            label4.Name = "label4";
-            label4.Size = new Size(90, 24);
-            label4.TabIndex = 17;
-            label4.Text = "End Date";
-            // 
-            // lblPrice
-            // 
-            lblPrice.AutoSize = true;
-            lblPrice.Font = new Font("Merriweather", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPrice.Location = new Point(300, 346);
-            lblPrice.Name = "lblPrice";
-            lblPrice.Size = new Size(83, 24);
-            lblPrice.TabIndex = 18;
-            lblPrice.Text = "Amount";
-            // 
-            // lblDuration
-            // 
-            lblDuration.AutoSize = true;
-            lblDuration.Font = new Font("Merriweather", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDuration.Location = new Point(300, 402);
-            lblDuration.Name = "lblDuration";
-            lblDuration.Size = new Size(90, 24);
-            lblDuration.TabIndex = 19;
-            lblDuration.Text = "Duration";
-            // 
-            // lblName
-            // 
-            lblName.AutoSize = true;
-            lblName.Font = new Font("Merriweather", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblName.Location = new Point(300, 292);
-            lblName.Name = "lblName";
-            lblName.Size = new Size(136, 24);
-            lblName.TabIndex = 20;
-            lblName.Text = "Scheme Name";
+            btnEdit.Click += btnEdit_Click;
             // 
             // lblMembers
             // 
             lblMembers.AutoSize = true;
             lblMembers.Font = new Font("Merriweather", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMembers.Location = new Point(903, 104);
+            lblMembers.Location = new Point(297, 233);
             lblMembers.Name = "lblMembers";
             lblMembers.Size = new Size(94, 24);
             lblMembers.TabIndex = 21;
@@ -165,81 +122,16 @@
             lblMembership.TabIndex = 16;
             lblMembership.Text = "Membership";
             // 
-            // label1
+            // cmbMember
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Merriweather", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(976, 296);
-            label1.Name = "label1";
-            label1.Size = new Size(98, 24);
-            label1.TabIndex = 17;
-            label1.Text = "Start Date";
-            // 
-            // txtAmout
-            // 
-            txtAmout.Location = new Point(484, 344);
-            txtAmout.Name = "txtAmout";
-            txtAmout.Size = new Size(335, 31);
-            txtAmout.TabIndex = 31;
-            // 
-            // txtDuration
-            // 
-            txtDuration.Location = new Point(484, 398);
-            txtDuration.Name = "txtDuration";
-            txtDuration.Size = new Size(335, 31);
-            txtDuration.TabIndex = 31;
-            // 
-            // DTPStart
-            // 
-            DTPStart.Location = new Point(1128, 293);
-            DTPStart.Name = "DTPStart";
-            DTPStart.Size = new Size(300, 31);
-            DTPStart.TabIndex = 32;
-            // 
-            // DTPEnd
-            // 
-            DTPEnd.Location = new Point(1128, 346);
-            DTPEnd.Name = "DTPEnd";
-            DTPEnd.Size = new Size(300, 31);
-            DTPEnd.TabIndex = 32;
-            // 
-            // cmbScheme
-            // 
-            cmbScheme.FormattingEnabled = true;
-            cmbScheme.Location = new Point(483, 295);
-            cmbScheme.Name = "cmbScheme";
-            cmbScheme.Size = new Size(336, 33);
-            cmbScheme.TabIndex = 33;
-            cmbScheme.SelectedIndexChanged += cmbScheme_SelectedIndexChanged;
-            // 
-            // comboBox2
-            // 
-            comboBox2.Font = new Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(1072, 101);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(356, 34);
-            comboBox2.TabIndex = 34;
-            comboBox2.Text = "                           Select Member ID";
-            // 
-            // lblMemberName
-            // 
-            lblMemberName.AutoSize = true;
-            lblMemberName.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMemberName.Location = new Point(1103, 148);
-            lblMemberName.Name = "lblMemberName";
-            lblMemberName.Size = new Size(0, 28);
-            lblMemberName.TabIndex = 35;
-            lblMemberName.Click += lblMemberName_Click;
-            // 
-            // lblMemberNamr
-            // 
-            lblMemberNamr.AutoSize = true;
-            lblMemberNamr.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMemberNamr.Location = new Point(1102, 154);
-            lblMemberNamr.Name = "lblMemberNamr";
-            lblMemberNamr.Size = new Size(0, 23);
-            lblMemberNamr.TabIndex = 36;
+            cmbMember.Font = new Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbMember.FormattingEnabled = true;
+            cmbMember.Location = new Point(466, 230);
+            cmbMember.Name = "cmbMember";
+            cmbMember.Size = new Size(356, 34);
+            cmbMember.TabIndex = 34;
+            cmbMember.Text = "                           Select Member ID";
+            cmbMember.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // panel1
             // 
@@ -268,66 +160,92 @@
             flowLayoutPanel1.Size = new Size(412, 89);
             flowLayoutPanel1.TabIndex = 82;
             // 
+            // cmbPackage
+            // 
+            cmbPackage.Font = new Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbPackage.FormattingEnabled = true;
+            cmbPackage.Location = new Point(466, 279);
+            cmbPackage.Name = "cmbPackage";
+            cmbPackage.Size = new Size(356, 34);
+            cmbPackage.TabIndex = 85;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Merriweather", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(297, 282);
+            label2.Name = "label2";
+            label2.Size = new Size(83, 24);
+            label2.TabIndex = 84;
+            label2.Text = "Package";
+            // 
+            // ChkIsActive
+            // 
+            ChkIsActive.AutoSize = true;
+            ChkIsActive.Font = new Font("Merriweather", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            ChkIsActive.Location = new Point(466, 332);
+            ChkIsActive.Name = "ChkIsActive";
+            ChkIsActive.Size = new Size(106, 28);
+            ChkIsActive.TabIndex = 110;
+            ChkIsActive.TabStop = true;
+            ChkIsActive.Text = "IsActive";
+            ChkIsActive.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(971, 59);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(740, 650);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 85;
+            pictureBox1.TabStop = false;
+            // 
             // Membership
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1713, 710);
+            Controls.Add(ChkIsActive);
+            Controls.Add(cmbPackage);
+            Controls.Add(label2);
             Controls.Add(panel1);
-            Controls.Add(lblMemberNamr);
-            Controls.Add(lblMemberName);
-            Controls.Add(comboBox2);
-            Controls.Add(cmbScheme);
-            Controls.Add(DTPEnd);
-            Controls.Add(DTPStart);
-            Controls.Add(txtDuration);
-            Controls.Add(txtAmout);
-            Controls.Add(DGVMeasurement);
+            Controls.Add(cmbMember);
+            Controls.Add(DGVMembership);
             Controls.Add(btnSave);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
-            Controls.Add(label1);
-            Controls.Add(label4);
-            Controls.Add(lblPrice);
-            Controls.Add(lblDuration);
-            Controls.Add(lblName);
             Controls.Add(lblMembers);
             Controls.Add(lblMembership);
             Controls.Add(flowLayoutPanel1);
+            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Membership";
             Text = "Membership";
             Load += Membership_Load;
-            ((System.ComponentModel.ISupportInitialize)DGVMeasurement).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGVMembership).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView DGVMeasurement;
+        private DataGridView DGVMembership;
         private Button btnSave;
         private Button btnDelete;
         private Button btnEdit;
-        private Label label4;
-        private Label lblPrice;
-        private Label lblDuration;
-        private Label lblName;
         private Label lblMembers;
         private Label lblMembership;
-        private Label label1;
-        private TextBox txtAmout;
-        private TextBox txtDuration;
-        private DateTimePicker DTPStart;
-        private DateTimePicker DTPEnd;
-        private ComboBox cmbScheme;
-        private ComboBox comboBox2;
-        private Label lblMemberName;
-        private Label lblMemberNamr;
+        private ComboBox cmbMember;
         private Panel panel1;
         private FlowLayoutPanel flowLayoutPanel1;
         private PictureBox pictureBox9;
+        private ComboBox cmbPackage;
+        private Label label2;
+        private RadioButton ChkIsActive;
+        private PictureBox pictureBox1;
     }
 }

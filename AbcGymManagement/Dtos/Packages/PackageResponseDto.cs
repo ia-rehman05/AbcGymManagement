@@ -9,6 +9,7 @@ namespace GMS.Service.Dtos.Packages
 {
     public class PackageResponseDto
     {
+        #region Parameters
         public Guid Id { get; set; }
         public string Name { get; set; }
 
@@ -23,6 +24,7 @@ namespace GMS.Service.Dtos.Packages
         [DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
 
-        internal bool IsActive { get; set; }
+        public bool IsActive { get; set; }
+        #endregion
     }
 }

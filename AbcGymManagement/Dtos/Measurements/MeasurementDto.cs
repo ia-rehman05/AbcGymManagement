@@ -10,8 +10,6 @@ namespace GMS.Service.Dtos.Measurements
     public class MeasurementDto
     {
 
-        public Guid? Id { get; set; }
-
         [Required]
         [StringLength(50, ErrorMessage = "MemberId length can't be more than 50.")]
         public string MemberId { get; set; }

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FeedBack));
             lblFeedabcl = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dtpDate = new DateTimePicker();
             lblDate = new Label();
             lblMemberNamr = new Label();
             lblMemberName = new Label();
@@ -38,23 +38,23 @@
             lblMembers = new Label();
             lblType = new Label();
             lblStatus = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
+            cmbType = new ComboBox();
+            cmbStatus = new ComboBox();
             lblDrscription = new Label();
-            textBox1 = new TextBox();
+            txtDescription = new TextBox();
             btnSave = new Button();
             btnEdit = new Button();
             btnDelete = new Button();
-            DGVMeasurement = new DataGridView();
+            DGVFeedback = new DataGridView();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox4 = new PictureBox();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)DGVMeasurement).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGVFeedback).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblFeedabcl
@@ -69,12 +69,12 @@
             lblFeedabcl.TabIndex = 19;
             lblFeedabcl.Text = "Feedback";
             // 
-            // dateTimePicker1
+            // dtpDate
             // 
-            dateTimePicker1.Location = new Point(562, 244);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(324, 31);
-            dateTimePicker1.TabIndex = 43;
+            dtpDate.Location = new Point(562, 244);
+            dtpDate.Name = "dtpDate";
+            dtpDate.Size = new Size(324, 31);
+            dtpDate.TabIndex = 43;
             // 
             // lblDate
             // 
@@ -144,23 +144,23 @@
             lblStatus.TabIndex = 42;
             lblStatus.Text = "Resolution Status";
             // 
-            // comboBox1
+            // cmbType
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Complaint", "Suggestion", "Praise" });
-            comboBox1.Location = new Point(560, 305);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(326, 33);
-            comboBox1.TabIndex = 48;
+            cmbType.FormattingEnabled = true;
+            cmbType.Items.AddRange(new object[] { "Complaint", "Suggestion", "Praise" });
+            cmbType.Location = new Point(560, 305);
+            cmbType.Name = "cmbType";
+            cmbType.Size = new Size(326, 33);
+            cmbType.TabIndex = 48;
             // 
-            // comboBox2
+            // cmbStatus
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Pending ", "Resolved", "In Progress" });
-            comboBox2.Location = new Point(560, 362);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(326, 33);
-            comboBox2.TabIndex = 48;
+            cmbStatus.FormattingEnabled = true;
+            cmbStatus.Items.AddRange(new object[] { "Pending ", "Resolved", "In Progress" });
+            cmbStatus.Location = new Point(560, 362);
+            cmbStatus.Name = "cmbStatus";
+            cmbStatus.Size = new Size(326, 33);
+            cmbStatus.TabIndex = 48;
             // 
             // lblDrscription
             // 
@@ -172,13 +172,13 @@
             lblDrscription.TabIndex = 42;
             lblDrscription.Text = "Description";
             // 
-            // textBox1
+            // txtDescription
             // 
-            textBox1.Location = new Point(1179, 229);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(356, 166);
-            textBox1.TabIndex = 49;
+            txtDescription.Location = new Point(1179, 229);
+            txtDescription.Multiline = true;
+            txtDescription.Name = "txtDescription";
+            txtDescription.Size = new Size(356, 166);
+            txtDescription.TabIndex = 49;
             // 
             // btnSave
             // 
@@ -218,17 +218,18 @@
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 
-            // DGVMeasurement
+            // DGVFeedback
             // 
-            DGVMeasurement.AllowUserToDeleteRows = false;
-            DGVMeasurement.BackgroundColor = SystemColors.ButtonHighlight;
-            DGVMeasurement.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVMeasurement.Location = new Point(235, 490);
-            DGVMeasurement.Name = "DGVMeasurement";
-            DGVMeasurement.RowHeadersWidth = 62;
-            DGVMeasurement.RowTemplate.Height = 33;
-            DGVMeasurement.Size = new Size(1477, 219);
-            DGVMeasurement.TabIndex = 53;
+            DGVFeedback.AllowUserToDeleteRows = false;
+            DGVFeedback.BackgroundColor = SystemColors.ButtonHighlight;
+            DGVFeedback.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVFeedback.Location = new Point(288, 490);
+            DGVFeedback.Name = "DGVFeedback";
+            DGVFeedback.RowHeadersWidth = 62;
+            DGVFeedback.RowTemplate.Height = 33;
+            DGVFeedback.Size = new Size(1424, 219);
+            DGVFeedback.TabIndex = 53;
+            DGVFeedback.MouseDoubleClick += DGVFeedback_MouseDoubleClick;
             // 
             // panel1
             // 
@@ -238,6 +239,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(59, 121);
             panel1.TabIndex = 56;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(8, 25);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(43, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // flowLayoutPanel1
             // 
@@ -258,34 +269,24 @@
             pictureBox4.TabIndex = 5;
             pictureBox4.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(8, 25);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(43, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
-            // 
             // FeedBack
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1713, 710);
             Controls.Add(panel1);
-            Controls.Add(DGVMeasurement);
+            Controls.Add(DGVFeedback);
             Controls.Add(btnSave);
             Controls.Add(btnEdit);
             Controls.Add(btnDelete);
-            Controls.Add(textBox1);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(txtDescription);
+            Controls.Add(cmbStatus);
+            Controls.Add(cmbType);
             Controls.Add(lblMemberNamr);
             Controls.Add(lblMemberName);
             Controls.Add(cmbMember);
             Controls.Add(lblMembers);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dtpDate);
             Controls.Add(lblStatus);
             Controls.Add(lblDrscription);
             Controls.Add(lblType);
@@ -295,18 +296,19 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FeedBack";
             Text = "FeedBack";
-            ((System.ComponentModel.ISupportInitialize)DGVMeasurement).EndInit();
+            Load += FeedBack_Load;
+            ((System.ComponentModel.ISupportInitialize)DGVFeedback).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private Label lblFeedabcl;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpDate;
         private Label lblDate;
         private Label lblMemberNamr;
         private Label lblMemberName;
@@ -314,14 +316,14 @@
         private Label lblMembers;
         private Label lblType;
         private Label lblStatus;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private ComboBox cmbType;
+        private ComboBox cmbStatus;
         private Label lblDrscription;
-        private TextBox textBox1;
+        private TextBox txtDescription;
         private Button btnSave;
         private Button btnEdit;
         private Button btnDelete;
-        private DataGridView DGVMeasurement;
+        private DataGridView DGVFeedback;
         private Panel panel1;
         private FlowLayoutPanel flowLayoutPanel1;
         private PictureBox pictureBox1;

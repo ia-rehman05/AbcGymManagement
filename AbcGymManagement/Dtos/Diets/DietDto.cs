@@ -9,8 +9,6 @@ namespace GMS.Service.Dtos.Diets
 {
     public class DietDto
     {
-        public Guid Id { get; set; }
-
         [Required(ErrorMessage = "Member ID is required.")]
         public string MemberId { get; set; }
         public string MealType { get; set; }
