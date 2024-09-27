@@ -124,7 +124,6 @@ namespace AbcGymManagement.Forms
 
             }
         }
-
         private void FeedBack_Load(object sender, EventArgs e)
         {
 

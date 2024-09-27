@@ -156,7 +156,14 @@ namespace AbcGymManagement.ApiRequestHandler
                 return false;
             }
         }
-            #endregion
+        #endregion
+
+
+        // Method to set the JWT token for the HttpClient
+        public void SetJwtToken(string token)
+        {
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
         }
+    }
     }
 

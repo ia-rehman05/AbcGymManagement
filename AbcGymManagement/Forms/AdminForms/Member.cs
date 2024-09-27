@@ -1,6 +1,8 @@
 ﻿using AbcGymManagement.ApiRequestHandler;
+using AbcGymManagement.SignalR;
 using GMS.Service.Dtos.Members;
 using GMS.Service.Dtos.Trainers;
+using Microsoft.AspNetCore.SignalR.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,10 +20,12 @@ namespace AbcGymManagement.Forms
         private readonly HttpMembertHandler _memberHandler;
         private readonly HttpTrainerHandler _trainerHandler;
         private readonly HttpMembershipHandler _membershipHandler;
-
+        private HubConnection _hubConnection;
+        private readonly SignalRClientHandler<Member> _signalRClientHandler;
 
         private string _apiUrl = "https://localhost:7160/api/Member";
         private string apiUrl = "https://localhost:7160/api/Membership";
+
 
         private Guid? _selectedMemberId = null;
         public Member()
@@ -33,6 +37,17 @@ namespace AbcGymManagement.Forms
             LoadMembers();
             LoadTrainers();
             LoadMemberships();
+            //StartSignalRConnection();
+            _signalRClientHandler = new SignalRClientHandler<Member>("https://localhost:7160/GymHub", "Member", LoadMembers);
+
+            StartSignalR();
+
+
+        }
+
+        private async void StartSignalR()
+        {
+            await _signalRClientHandler.StartConnection();
         }
         private async void LoadTrainers()
         {
@@ -49,6 +64,7 @@ namespace AbcGymManagement.Forms
             cmbTrainer.DisplayMember = "PackageId";
             cmbTrainer.ValueMember = "Id";
         }
+
         private void AddMember_Load(object sender, EventArgs e)
         {
 
@@ -103,7 +119,6 @@ namespace AbcGymManagement.Forms
             else
             {
                 MessageBox.Show("Failed to add Member.");
-                LoadMembers();
             }
         }
         private async void btnEdit_Click(object sender, EventArgs e)
@@ -140,14 +155,11 @@ namespace AbcGymManagement.Forms
             }
             else
             {
-                    MessageBox.Show("Please Select Any Member First");
+                MessageBox.Show("Please Select Any Member First");
             }
 
 
         }
-
-
-
         private async void LoadMembers()
         {
             try
@@ -158,7 +170,7 @@ namespace AbcGymManagement.Forms
                 {
                     DGVMember.DataSource = members;
 
-                    
+
                 }
                 else
                 {
@@ -228,5 +240,17 @@ namespace AbcGymManagement.Forms
 
         }
 
+
+
+
+        private void Member_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _signalRClientHandler.StopConnection();
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

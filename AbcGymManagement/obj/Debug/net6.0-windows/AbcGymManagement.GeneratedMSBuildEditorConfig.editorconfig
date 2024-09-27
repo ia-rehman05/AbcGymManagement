@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AbcGymManagement
-build_property.ProjectDir = C:\Users\Abdur Rehman\Source\Repos\AbcGymManagement\AbcGymManagement\
+build_property.ProjectDir = C:\Users\PMLS\Documents\Simple Project\GMS\Client1\AbcGymManagement\AbcGymManagement\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

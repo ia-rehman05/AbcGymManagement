@@ -1,5 +1,6 @@
 using AbcGymManagement.Forms;
 using AbcGymManagement.Forms.AdminForms;
+using Newtonsoft.Json.Linq;
 
 namespace AbcGymManagement
 {
@@ -7,12 +8,16 @@ namespace AbcGymManagement
     {
         int PW;
         bool Hided;
+        private string _jwtToken;
 
-        public Dashboard()
+
+        public Dashboard(string jwtToken)
         {
             InitializeComponent();
             PW = MainPanel.Width;
             Hided = false;
+            _jwtToken = jwtToken;
+
         }
         public void loadform(object Form)
         {
@@ -141,7 +146,9 @@ namespace AbcGymManagement
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
         }
 
         private void btnSettting_Click(object sender, EventArgs e)
